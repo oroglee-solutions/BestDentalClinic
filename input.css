@@ -1,0 +1,516 @@
+@import "tailwindcss";
+
+/* ==============================================================
+   BEST DENTAL CLINIC — DESIGN TOKENS
+   Navy #1A4996 primary · Gold #FBBC05 accent · Pale-blue surfaces.
+   Every token below becomes a Tailwind utility automatically:
+     bg-brand  text-gold  bg-surface  border-brand-soft  shadow-card
+   Change a value here and rebuild — the whole site follows.
+   ============================================================== */
+@theme {
+  /* Brand blues */
+  --color-brand: #1a4996;
+  --color-brand-mid: #1a3a6b;
+  --color-brand-dark: #0a1d3d;
+  --color-brand-deep: #0a1a35;
+  --color-brand-soft: #90b4e7;
+
+  /* Surfaces */
+  --color-surface: #eef5ff;
+  --color-surface-2: #fefeff;
+
+  /* Ink + accents */
+  --color-ink: #030a14;
+  --color-gold: #fbbc05;
+  --color-gold-dark: #f59e0b;
+  --color-whatsapp: #25d366;
+
+  /* Typography */
+  --font-sans: "Poppins", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-display: "Playfair Display", Georgia, "Times New Roman", serif;
+
+  /* Elevation */
+  --shadow-card: 0 4px 20px rgba(10, 29, 61, 0.06);
+  --shadow-card-hover: 0 18px 40px rgba(10, 29, 61, 0.14);
+  --shadow-brand: 0 10px 24px rgba(26, 73, 150, 0.28);
+}
+
+/* ==============================================================
+   BASE
+   ============================================================== */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    color: var(--color-ink);
+    background-color: #ffffff;
+  }
+
+  /* Clear the 80px sticky navbar when jumping to an #id */
+  [id] {
+    scroll-margin-top: 6rem;
+  }
+
+  h1,
+  h2,
+  h3 {
+    letter-spacing: -0.02em;
+  }
+
+  :focus-visible {
+    outline: 3px solid var(--color-gold);
+    outline-offset: 2px;
+  }
+}
+
+/* ==============================================================
+   BASE PRIMITIVES
+   `btn` and `card` are registered as real utilities rather than
+   component classes, because Tailwind v4's @apply only accepts
+   utilities — the variants below build on them with @apply btn.
+   ============================================================== */
+@utility btn {
+  @apply inline-flex items-center justify-center gap-2.5 rounded-full px-6 py-3 text-sm font-semibold transition duration-300 sm:px-7 sm:py-3.5 sm:text-base;
+}
+
+@utility card {
+  @apply rounded-2xl border border-brand-soft/25 bg-white shadow-card transition duration-300;
+}
+
+/* ==============================================================
+   COMPONENTS
+   Shared across all 14 pages so a button/card only changes once.
+   ============================================================== */
+@layer components {
+  /* ---- Layout ---- */
+  .container-x {
+    @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+
+  .section-pad {
+    @apply py-14 sm:py-20 lg:py-24;
+  }
+
+  /* ---- Section headings ---- */
+  .eyebrow {
+    @apply mb-3 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.18em] text-brand sm:text-sm;
+  }
+
+  .eyebrow::before {
+    content: "";
+    @apply inline-block h-1 w-7 rounded-full bg-gold;
+  }
+
+  .h-section {
+    @apply font-display text-3xl font-bold leading-tight text-ink sm:text-4xl lg:text-[2.75rem];
+  }
+
+  .lede {
+    @apply mt-4 max-w-2xl text-base leading-relaxed text-slate-600 sm:text-lg;
+  }
+
+  /* ---- Buttons ---- */
+  .btn-primary {
+    @apply btn bg-brand text-white shadow-brand hover:-translate-y-0.5 hover:bg-brand-mid;
+  }
+
+  .btn-gold {
+    @apply btn bg-gold text-brand-deep shadow-md hover:-translate-y-0.5 hover:bg-gold-dark;
+  }
+
+  .btn-outline {
+    @apply btn border-2 border-brand bg-transparent text-brand hover:bg-brand hover:text-white;
+  }
+
+  .btn-ghost-light {
+    @apply btn border-2 border-white/70 bg-transparent text-white hover:bg-white hover:text-brand;
+  }
+
+  /* ---- Cards ---- */
+  .card-hover {
+    @apply card hover:-translate-y-1.5 hover:border-brand-soft/60 hover:shadow-card-hover;
+  }
+
+  /* ---- Navigation ---- */
+  .nav-link {
+    @apply relative py-2 text-sm font-medium text-slate-700 transition hover:text-brand;
+  }
+
+  .nav-link::after {
+    content: "";
+    @apply absolute -bottom-0.5 left-0 h-0.5 w-0 rounded-full bg-gold transition-all duration-300;
+  }
+
+  .nav-link:hover::after,
+  .nav-link[aria-current="page"]::after {
+    @apply w-full;
+  }
+
+  .nav-link[aria-current="page"] {
+    @apply font-semibold text-brand;
+  }
+
+  .mobile-link {
+    @apply block rounded-lg px-4 py-2.5 text-[15px] font-medium text-slate-700 transition hover:bg-surface hover:text-brand;
+  }
+
+  .mobile-link[aria-current="page"] {
+    @apply bg-surface font-semibold text-brand;
+  }
+
+  /* Desktop services dropdown */
+  .dropdown-panel {
+    @apply invisible absolute left-1/2 top-full z-50 w-[560px] -translate-x-1/2 translate-y-2 rounded-2xl border border-brand-soft/30 bg-white p-3 opacity-0 shadow-card-hover transition-all duration-200;
+  }
+
+  .dropdown:hover .dropdown-panel,
+  .dropdown:focus-within .dropdown-panel {
+    @apply visible translate-y-0 opacity-100;
+  }
+
+  .dropdown-item {
+    @apply flex items-start gap-3 rounded-xl p-3 transition hover:bg-surface;
+  }
+
+  /* ---- Forms ---- */
+  .field {
+    @apply w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-sm text-ink placeholder:text-slate-400 transition focus:border-brand focus:outline-none focus:ring-4 focus:ring-brand/10 sm:text-base;
+  }
+
+  .field-label {
+    @apply mb-1.5 block text-sm font-medium text-slate-700;
+  }
+
+  /* ---- Footer ---- */
+  .footer-link {
+    @apply inline-block text-sm text-slate-300 transition hover:translate-x-1 hover:text-gold;
+  }
+
+  .footer-heading {
+    @apply mb-5 text-base font-semibold text-white;
+  }
+
+  /* ---- Misc ---- */
+  .chip {
+    @apply inline-flex items-center gap-2 rounded-full bg-surface px-4 py-2 text-xs font-semibold text-brand sm:text-sm;
+  }
+
+  .badge-gold {
+    @apply inline-flex items-center gap-2 rounded-full bg-gold/15 px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-gold-dark;
+  }
+}
+
+/* ==============================================================
+   CUSTOM UTILITIES
+   ============================================================== */
+
+/* Hides the scrollbar on horizontal sliders while keeping them scrollable */
+@utility no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* Navy gradient used on hero/CTA bands */
+@utility bg-brand-gradient {
+  background-image: linear-gradient(
+    135deg,
+    var(--color-brand-deep) 0%,
+    var(--color-brand) 55%,
+    var(--color-brand-mid) 100%
+  );
+}
+
+/* Faint dot grid layered over dark bands */
+@utility bg-dot-grid {
+  background-image: radial-gradient(
+    rgba(144, 180, 231, 0.28) 1px,
+    transparent 1px
+  );
+  background-size: 22px 22px;
+}
+
+/* ==============================================================
+   ANIMATION — scroll reveal
+   Elements start hidden and JS adds .is-visible via
+   IntersectionObserver. Disabled under reduced-motion.
+   ============================================================== */
+.reveal {
+  opacity: 0;
+  transform: translateY(36px);
+  transition:
+    opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger children inside a .reveal-group */
+.reveal-group > .reveal:nth-child(2) {
+  transition-delay: 0.1s;
+}
+.reveal-group > .reveal:nth-child(3) {
+  transition-delay: 0.2s;
+}
+.reveal-group > .reveal:nth-child(4) {
+  transition-delay: 0.3s;
+}
+.reveal-group > .reveal:nth-child(5) {
+  transition-delay: 0.4s;
+}
+.reveal-group > .reveal:nth-child(6) {
+  transition-delay: 0.5s;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 28s linear infinite;
+}
+
+.marquee-track:hover .animate-marquee {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .animate-float,
+  .animate-marquee {
+    animation: none;
+  }
+}
+
+/* ==============================================================
+   NAVBAR — solid shadow appears once the page scrolls
+   ============================================================== */
+.site-nav {
+  transition:
+    box-shadow 0.3s ease,
+    background-color 0.3s ease;
+}
+
+.site-nav.is-scrolled {
+  box-shadow: 0 6px 24px rgba(10, 29, 61, 0.1);
+}
+
+/* ==============================================================
+   FAQ ACCORDION
+   Panels animate on max-height because grid-rows animation is
+   still patchy in older Safari, which a clinic site still sees.
+   ============================================================== */
+.faq-panel {
+  max-height: 0;
+  overflow: hidden;
+  transition:
+    max-height 0.4s ease,
+    opacity 0.3s ease;
+  opacity: 0;
+}
+
+.faq-item.is-open .faq-panel {
+  max-height: 480px;
+  opacity: 1;
+}
+
+.faq-item.is-open .faq-icon {
+  transform: rotate(45deg);
+  background-color: var(--color-brand);
+  color: #ffffff;
+}
+
+.faq-icon {
+  transition:
+    transform 0.3s ease,
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+/* ==============================================================
+   TESTIMONIALS SLIDER
+   Fixed-width cards that never shrink; the track slides instead.
+   1 up on mobile, 2 up on tablet, 3 up on desktop.
+   ============================================================== */
+.testimonial-track {
+  display: flex;
+  gap: 1.5rem;
+  transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.testimonial-card {
+  flex: 0 0 100%;
+}
+
+@media (min-width: 768px) {
+  .testimonial-card {
+    flex: 0 0 calc(50% - 0.75rem);
+  }
+}
+
+@media (min-width: 1024px) {
+  .testimonial-card {
+    flex: 0 0 calc((100% - 3rem) / 3);
+  }
+}
+
+.slider-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 9999px;
+  background: rgba(26, 73, 150, 0.25);
+  transition:
+    width 0.3s ease,
+    background-color 0.3s ease;
+}
+
+.slider-dot.is-active {
+  width: 26px;
+  background: var(--color-brand);
+}
+
+/* ==============================================================
+   MEDIA FRAMES
+   Fixed heights keep cards aligned regardless of source aspect
+   ratio, and grow on wider breakpoints where cards get wider.
+   ============================================================== */
+.service-media {
+  height: 13rem;
+}
+
+@media (min-width: 640px) {
+  .service-media {
+    height: 14rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .service-media {
+    height: 13rem;
+  }
+}
+
+.doctor-media {
+  height: 20rem;
+}
+
+@media (min-width: 640px) {
+  .doctor-media {
+    height: 22rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .doctor-media {
+    height: 24rem;
+  }
+}
+
+.map-frame {
+  height: 300px;
+}
+
+@media (min-width: 768px) {
+  .map-frame {
+    height: 380px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .map-frame {
+    height: 450px;
+  }
+}
+
+.hero-media {
+  height: 22rem;
+}
+
+@media (min-width: 640px) {
+  .hero-media {
+    height: 26rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-media {
+    height: 34rem;
+  }
+}
+
+/* ==============================================================
+   SELECT — native arrow removed, Font Awesome chevron drawn in
+   ============================================================== */
+select.field {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  cursor: pointer;
+  padding-right: 2.5rem;
+}
+
+.select-wrap {
+  position: relative;
+}
+
+.select-wrap::after {
+  content: "\f078";
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  font-size: 11px;
+  color: #94a3b8;
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+/* ==============================================================
+   PRINT
+   ============================================================== */
+@media print {
+  .site-nav,
+  footer,
+  .floating-actions {
+    display: none !important;
+  }
+}
