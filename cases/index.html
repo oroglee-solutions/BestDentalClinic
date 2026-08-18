@@ -32,7 +32,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="../output.css">
@@ -315,27 +315,24 @@
 
 
     <!-- PAGE HERO -->
-    <section class="relative overflow-hidden bg-brand-gradient bg-dot-grid py-14 lg:py-20">
-      <div class="container-x relative">
-        <nav aria-label="Breadcrumb" class="mb-5">
-          <ol class="flex flex-wrap items-center gap-2 text-xs text-brand-soft">
-            <li><a href="../index.html" class="transition hover:text-gold">Home</a></li>
-            <li aria-hidden="true"><i class="fas fa-chevron-right text-[8px]"></i></li>
-            <li class="font-semibold text-white" aria-current="page">Cases</li>
-          </ol>
-        </nav>
+    <section class="bg-white px-6 pb-4 pt-16 text-center sm:pt-24">
+      <h1 class="mb-4 font-display text-2xl font-bold tracking-tight text-ink sm:text-4xl lg:text-5xl xl:text-6xl">
+        Transformation <span class="text-brand italic">Gallery</span>
+      </h1>
+      <p class="mx-auto max-w-2xl text-lg font-medium leading-relaxed text-slate-500 sm:text-xl">
+        Witness the life-changing results we have achieved for our patients in Manikonda through restorative and
+        aesthetic dentistry.
+      </p>
 
-        <h1 class="max-w-3xl font-display text-4xl font-bold leading-tight text-white sm:text-5xl lg:text-[3.25rem]">
-          Treatment Cases From Our Clinic
-        </h1>
-        <p class="mt-5 max-w-2xl text-base leading-relaxed text-brand-soft sm:text-lg">
-          A selection of cases we have treated in Manikonda — the problem the patient arrived with, what we actually did, and how it turned out.
-        </p>
-
-        <div class="mt-8 flex flex-wrap gap-4">
-          <a href="../book-appointment/index.html" class="btn-gold">Book a Consultation</a>
-          <a href="../services/index.html" class="btn-ghost-light">Browse Services</a>
-        </div>
+      <div class="mt-8 flex flex-wrap justify-center gap-4">
+        <a href="../book-appointment/index.html"
+          class="inline-flex h-14 items-center justify-center gap-3 rounded-xl bg-brand px-8 text-base font-bold text-white shadow-brand transition hover:bg-brand-mid active:scale-[0.98]">
+          Book a Consultation
+        </a>
+        <a href="../services/index.html"
+          class="inline-flex h-14 items-center justify-center gap-3 rounded-xl border border-slate-200 bg-white px-8 text-base font-bold text-ink shadow-sm transition hover:bg-slate-50 active:scale-[0.98]">
+          Browse Services
+        </a>
       </div>
     </section>
 
@@ -364,327 +361,411 @@
     </section>
 
     <!-- CASE GRID -->
-    <section class="section-pad bg-white">
+    <section id="cases" class="overflow-hidden bg-slate-50/50 pb-20 pt-8">
       <div class="container-x">
-        <div class="reveal mb-12 max-w-3xl">
-          <p class="eyebrow">Case Studies</p>
-          <h2 class="h-section">What These Treatments Look Like in Practice</h2>
-          <p class="lede">
+
+        <div class="reveal mx-auto mb-16 max-w-3xl text-center lg:mb-20">
+          <span class="mb-4 block text-xs font-bold uppercase tracking-[0.2em] text-brand">Patient Success</span>
+          <h2 class="mb-4 font-display text-2xl font-bold leading-[1.2] text-ink sm:text-3xl lg:text-[2.5rem]">
+            Real Results. <span class="text-brand italic">Life-Changing</span> Smiles.
+          </h2>
+          <p class="text-[1.0625rem] leading-relaxed text-slate-500">
             Every case here is anonymised, and every result depends on the individual — bone quality, gum health, habits
             and how closely aftercare is followed all change the outcome.
           </p>
         </div>
 
-        <div class="reveal-group grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          <article class="reveal card-hover group overflow-hidden">
-            <div class="service-media relative overflow-hidden bg-surface">
-              <img src="../assets/FullMouthRehabiliationLg.webp" alt="Full mouth rehabilitation with implant-supported restorations"
-                class="h-full w-full object-cover transition duration-500 group-hover:scale-105" width="600" height="450"
-                loading="lazy" decoding="async">
-              <span class="absolute left-4 top-4 rounded-full bg-white/95 px-3 py-1 text-xs font-bold text-brand">Implants</span>
-            </div>
-            <div class="p-6">
-              <h3 class="font-display text-xl font-bold text-ink">Full Mouth Rehabilitation</h3>
-              <p class="mt-1 text-xs uppercase tracking-widest text-slate-400">Male, 58 · 8 months</p>
+        <div class="reveal-group grid grid-cols-1 gap-10 lg:grid-cols-2">
+          <div class="reveal group">
+            <div class="h-full overflow-hidden rounded-3xl border border-slate-200/40 bg-white shadow-[0_4px_20px_-2px_rgba(15,23,42,0.05)] transition-all duration-300 hover:shadow-xl">
 
-              <dl class="mt-4 space-y-3 text-sm">
-                <div>
-                  <dt class="font-semibold text-brand">The problem</dt>
-                  <dd class="mt-0.5 leading-relaxed text-slate-600">Years of worn-down and missing back teeth had collapsed the bite, causing jaw pain and difficulty chewing anything firm.</dd>
+              <div class="relative aspect-[16/10] overflow-hidden">
+                <img src="../assets/FullMouthRehabiliationLg.webp" alt="Full mouth rehabilitation with implant-supported restorations"
+                  class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  width="600" height="450" loading="lazy" decoding="async">
+                <div class="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-ink/90 via-ink/20 to-transparent p-6 sm:p-8">
+                  <span class="mb-3 inline-block self-start rounded-lg bg-brand/90 px-3 py-1 text-[0.7rem] font-bold uppercase tracking-[0.15em] text-white">Implants</span>
+                  <h3 class="font-display text-xl font-bold text-white sm:text-2xl lg:text-3xl">Full Mouth Rehabilitation</h3>
+                  <p class="mt-2 text-xs uppercase tracking-widest text-white/70">Male, 58 · 8 months</p>
                 </div>
-                <div>
-                  <dt class="font-semibold text-brand">What we did</dt>
-                  <dd class="mt-0.5 leading-relaxed text-slate-600">Six implants placed across both arches, followed by a full set of zirconia restorations rebuilt to the correct vertical height.</dd>
-                </div>
-                <div>
-                  <dt class="font-semibold text-brand">The result</dt>
-                  <dd class="mt-0.5 leading-relaxed text-slate-600">Chewing function restored across both sides, jaw pain resolved, and a bite that no longer wears itself down.</dd>
-                </div>
-              </dl>
+              </div>
 
-              <a href="../services/dental-implants/index.html"
-                class="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-brand transition hover:gap-3">
-                About this treatment <i class="fas fa-arrow-right text-xs"></i>
-              </a>
-            </div>
-          </article>
-          <article class="reveal card-hover group overflow-hidden">
-            <div class="service-media relative overflow-hidden bg-surface">
-              <img src="../assets/AlignersLg.webp" alt="Clear aligner treatment for adult orthodontic correction"
-                class="h-full w-full object-cover transition duration-500 group-hover:scale-105" width="600" height="450"
-                loading="lazy" decoding="async">
-              <span class="absolute left-4 top-4 rounded-full bg-white/95 px-3 py-1 text-xs font-bold text-brand">Orthodontics</span>
-            </div>
-            <div class="p-6">
-              <h3 class="font-display text-xl font-bold text-ink">Adult Clear Aligner Correction</h3>
-              <p class="mt-1 text-xs uppercase tracking-widest text-slate-400">Female, 31 · 14 months</p>
+              <div class="p-6 sm:p-8">
+                <p class="text-[1.0625rem] leading-relaxed text-slate-500">Years of worn-down and missing back teeth had collapsed the bite, causing jaw pain and difficulty chewing anything firm.</p>
 
-              <dl class="mt-4 space-y-3 text-sm">
-                <div>
-                  <dt class="font-semibold text-brand">The problem</dt>
-                  <dd class="mt-0.5 leading-relaxed text-slate-600">Moderate crowding in the lower front teeth with relapse from braces worn as a teenager, and reluctance to wear visible appliances at work.</dd>
-                </div>
-                <div>
-                  <dt class="font-semibold text-brand">What we did</dt>
-                  <dd class="mt-0.5 leading-relaxed text-slate-600">22 sets of clear aligners with attachments on four teeth, planned digitally and reviewed every six weeks.</dd>
-                </div>
-                <div>
-                  <dt class="font-semibold text-brand">The result</dt>
-                  <dd class="mt-0.5 leading-relaxed text-slate-600">Crowding fully resolved, midline corrected, and fixed lingual retainers placed to prevent a second relapse.</dd>
-                </div>
-              </dl>
+                <dl class="mt-6 space-y-4 border-t border-slate-100 pt-6 text-sm">
+                  <div>
+                    <dt class="text-xs font-bold uppercase tracking-[0.15em] text-brand">What we did</dt>
+                    <dd class="mt-1 leading-relaxed text-slate-600">Six implants placed across both arches, followed by a full set of zirconia restorations rebuilt to the correct vertical height.</dd>
+                  </div>
+                  <div>
+                    <dt class="text-xs font-bold uppercase tracking-[0.15em] text-brand">The result</dt>
+                    <dd class="mt-1 leading-relaxed text-slate-600">Chewing function restored across both sides, jaw pain resolved, and a bite that no longer wears itself down.</dd>
+                  </div>
+                </dl>
 
-              <a href="../services/invisible-aligners-braces/index.html"
-                class="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-brand transition hover:gap-3">
-                About this treatment <i class="fas fa-arrow-right text-xs"></i>
-              </a>
-            </div>
-          </article>
-          <article class="reveal card-hover group overflow-hidden">
-            <div class="service-media relative overflow-hidden bg-surface">
-              <img src="../assets/ImplantsLg.webp" alt="Single anterior dental implant with a matched ceramic crown"
-                class="h-full w-full object-cover transition duration-500 group-hover:scale-105" width="600" height="450"
-                loading="lazy" decoding="async">
-              <span class="absolute left-4 top-4 rounded-full bg-white/95 px-3 py-1 text-xs font-bold text-brand">Implants</span>
-            </div>
-            <div class="p-6">
-              <h3 class="font-display text-xl font-bold text-ink">Single Tooth Implant, Front Zone</h3>
-              <p class="mt-1 text-xs uppercase tracking-widest text-slate-400">Male, 34 · 5 months</p>
+                <a href="../services/dental-implants/index.html"
+                  class="mt-8 inline-flex w-full items-center justify-center gap-2 rounded-xl border border-brand/20 px-6 py-3 text-base font-bold text-brand transition-all duration-300 hover:bg-brand hover:text-white hover:shadow-lg active:scale-[0.98]">
+                  View Case Analysis <i class="fas fa-arrow-right text-xs" aria-hidden="true"></i>
+                </a>
+              </div>
 
-              <dl class="mt-4 space-y-3 text-sm">
-                <div>
-                  <dt class="font-semibold text-brand">The problem</dt>
-                  <dd class="mt-0.5 leading-relaxed text-slate-600">Upper front tooth fractured below the gum line after a sports injury and could not be saved.</dd>
-                </div>
-                <div>
-                  <dt class="font-semibold text-brand">What we did</dt>
-                  <dd class="mt-0.5 leading-relaxed text-slate-600">Atraumatic extraction with immediate socket grafting, implant placed after healing, then a layered ceramic crown shade-matched to the adjacent tooth.</dd>
-                </div>
-                <div>
-                  <dt class="font-semibold text-brand">The result</dt>
-                  <dd class="mt-0.5 leading-relaxed text-slate-600">The restored tooth is indistinguishable from its neighbour in normal light, with the gum contour preserved.</dd>
-                </div>
-              </dl>
-
-              <a href="../services/dental-implants/index.html"
-                class="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-brand transition hover:gap-3">
-                About this treatment <i class="fas fa-arrow-right text-xs"></i>
-              </a>
             </div>
-          </article>
-          <article class="reveal card-hover group overflow-hidden">
-            <div class="service-media relative overflow-hidden bg-surface">
-              <img src="../assets/SmileMakeoverLg.webp" alt="Smile makeover using porcelain veneers"
-                class="h-full w-full object-cover transition duration-500 group-hover:scale-105" width="600" height="450"
-                loading="lazy" decoding="async">
-              <span class="absolute left-4 top-4 rounded-full bg-white/95 px-3 py-1 text-xs font-bold text-brand">Cosmetic</span>
-            </div>
-            <div class="p-6">
-              <h3 class="font-display text-xl font-bold text-ink">Smile Makeover with Veneers</h3>
-              <p class="mt-1 text-xs uppercase tracking-widest text-slate-400">Female, 27 · 3 weeks</p>
+          </div>
+          <div class="reveal group">
+            <div class="h-full overflow-hidden rounded-3xl border border-slate-200/40 bg-white shadow-[0_4px_20px_-2px_rgba(15,23,42,0.05)] transition-all duration-300 hover:shadow-xl">
 
-              <dl class="mt-4 space-y-3 text-sm">
-                <div>
-                  <dt class="font-semibold text-brand">The problem</dt>
-                  <dd class="mt-0.5 leading-relaxed text-slate-600">Uneven tooth widths, two chipped incisors and a shade the patient had never been happy with.</dd>
+              <div class="relative aspect-[16/10] overflow-hidden">
+                <img src="../assets/AlignersLg.webp" alt="Clear aligner treatment for adult orthodontic correction"
+                  class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  width="600" height="450" loading="lazy" decoding="async">
+                <div class="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-ink/90 via-ink/20 to-transparent p-6 sm:p-8">
+                  <span class="mb-3 inline-block self-start rounded-lg bg-brand/90 px-3 py-1 text-[0.7rem] font-bold uppercase tracking-[0.15em] text-white">Orthodontics</span>
+                  <h3 class="font-display text-xl font-bold text-white sm:text-2xl lg:text-3xl">Adult Clear Aligner Correction</h3>
+                  <p class="mt-2 text-xs uppercase tracking-widest text-white/70">Female, 31 · 14 months</p>
                 </div>
-                <div>
-                  <dt class="font-semibold text-brand">What we did</dt>
-                  <dd class="mt-0.5 leading-relaxed text-slate-600">Digital smile design, a trial mock-up worn for a week, then eight minimal-preparation porcelain veneers on the upper arch.</dd>
-                </div>
-                <div>
-                  <dt class="font-semibold text-brand">The result</dt>
-                  <dd class="mt-0.5 leading-relaxed text-slate-600">Even proportions and a natural shade gradation — the patient approved the exact look before any enamel was touched.</dd>
-                </div>
-              </dl>
+              </div>
 
-              <a href="../services/cosmetic-dentistry/index.html"
-                class="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-brand transition hover:gap-3">
-                About this treatment <i class="fas fa-arrow-right text-xs"></i>
-              </a>
-            </div>
-          </article>
-          <article class="reveal card-hover group overflow-hidden">
-            <div class="service-media relative overflow-hidden bg-surface">
-              <img src="../assets/RCTLg.webp" alt="Emergency root canal treatment followed by a protective crown"
-                class="h-full w-full object-cover transition duration-500 group-hover:scale-105" width="600" height="450"
-                loading="lazy" decoding="async">
-              <span class="absolute left-4 top-4 rounded-full bg-white/95 px-3 py-1 text-xs font-bold text-brand">Emergency</span>
-            </div>
-            <div class="p-6">
-              <h3 class="font-display text-xl font-bold text-ink">Emergency Root Canal &amp; Crown</h3>
-              <p class="mt-1 text-xs uppercase tracking-widest text-slate-400">Female, 44 · 3 weeks</p>
+              <div class="p-6 sm:p-8">
+                <p class="text-[1.0625rem] leading-relaxed text-slate-500">Moderate crowding in the lower front teeth with relapse from braces worn as a teenager, and reluctance to wear visible appliances at work.</p>
 
-              <dl class="mt-4 space-y-3 text-sm">
-                <div>
-                  <dt class="font-semibold text-brand">The problem</dt>
-                  <dd class="mt-0.5 leading-relaxed text-slate-600">Severe throbbing pain in a lower molar that had kept the patient awake for three nights, with early facial swelling.</dd>
-                </div>
-                <div>
-                  <dt class="font-semibold text-brand">What we did</dt>
-                  <dd class="mt-0.5 leading-relaxed text-slate-600">Same-day emergency root canal to relieve pressure and remove the infected tissue, followed by a zirconia crown three weeks later.</dd>
-                </div>
-                <div>
-                  <dt class="font-semibold text-brand">The result</dt>
-                  <dd class="mt-0.5 leading-relaxed text-slate-600">Pain resolved within hours of the first visit, and the tooth was saved rather than extracted.</dd>
-                </div>
-              </dl>
+                <dl class="mt-6 space-y-4 border-t border-slate-100 pt-6 text-sm">
+                  <div>
+                    <dt class="text-xs font-bold uppercase tracking-[0.15em] text-brand">What we did</dt>
+                    <dd class="mt-1 leading-relaxed text-slate-600">22 sets of clear aligners with attachments on four teeth, planned digitally and reviewed every six weeks.</dd>
+                  </div>
+                  <div>
+                    <dt class="text-xs font-bold uppercase tracking-[0.15em] text-brand">The result</dt>
+                    <dd class="mt-1 leading-relaxed text-slate-600">Crowding fully resolved, midline corrected, and fixed lingual retainers placed to prevent a second relapse.</dd>
+                  </div>
+                </dl>
 
-              <a href="../services/emergency-dental-care/index.html"
-                class="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-brand transition hover:gap-3">
-                About this treatment <i class="fas fa-arrow-right text-xs"></i>
-              </a>
-            </div>
-          </article>
-          <article class="reveal card-hover group overflow-hidden">
-            <div class="service-media relative overflow-hidden bg-surface">
-              <img src="../assets/WisdomTeethRemovalLg.webp" alt="Surgical removal of an impacted wisdom tooth"
-                class="h-full w-full object-cover transition duration-500 group-hover:scale-105" width="600" height="450"
-                loading="lazy" decoding="async">
-              <span class="absolute left-4 top-4 rounded-full bg-white/95 px-3 py-1 text-xs font-bold text-brand">Surgery</span>
-            </div>
-            <div class="p-6">
-              <h3 class="font-display text-xl font-bold text-ink">Impacted Wisdom Tooth Removal</h3>
-              <p class="mt-1 text-xs uppercase tracking-widest text-slate-400">Male, 25 · Single visit</p>
+                <a href="../services/invisible-aligners-braces/index.html"
+                  class="mt-8 inline-flex w-full items-center justify-center gap-2 rounded-xl border border-brand/20 px-6 py-3 text-base font-bold text-brand transition-all duration-300 hover:bg-brand hover:text-white hover:shadow-lg active:scale-[0.98]">
+                  View Case Analysis <i class="fas fa-arrow-right text-xs" aria-hidden="true"></i>
+                </a>
+              </div>
 
-              <dl class="mt-4 space-y-3 text-sm">
-                <div>
-                  <dt class="font-semibold text-brand">The problem</dt>
-                  <dd class="mt-0.5 leading-relaxed text-slate-600">A horizontally impacted lower wisdom tooth causing repeated gum infections and pressing against the molar in front.</dd>
-                </div>
-                <div>
-                  <dt class="font-semibold text-brand">What we did</dt>
-                  <dd class="mt-0.5 leading-relaxed text-slate-600">Surgical removal under local anaesthesia with sectioning of the tooth to minimise bone removal.</dd>
-                </div>
-                <div>
-                  <dt class="font-semibold text-brand">The result</dt>
-                  <dd class="mt-0.5 leading-relaxed text-slate-600">Infections stopped completely and the adjacent molar was preserved. Normal eating resumed within four days.</dd>
-                </div>
-              </dl>
-
-              <a href="../services/emergency-dental-care/index.html"
-                class="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-brand transition hover:gap-3">
-                About this treatment <i class="fas fa-arrow-right text-xs"></i>
-              </a>
             </div>
-          </article>
-          <article class="reveal card-hover group overflow-hidden">
-            <div class="service-media relative overflow-hidden bg-surface">
-              <img src="../assets/KidsDentistryLg.webp" alt="Preventive dental care programme for children"
-                class="h-full w-full object-cover transition duration-500 group-hover:scale-105" width="600" height="450"
-                loading="lazy" decoding="async">
-              <span class="absolute left-4 top-4 rounded-full bg-white/95 px-3 py-1 text-xs font-bold text-brand">Pediatric</span>
-            </div>
-            <div class="p-6">
-              <h3 class="font-display text-xl font-bold text-ink">Children's Preventive Programme</h3>
-              <p class="mt-1 text-xs uppercase tracking-widest text-slate-400">Two siblings, 6 and 9 · 2 years of reviews</p>
+          </div>
+          <div class="reveal group">
+            <div class="h-full overflow-hidden rounded-3xl border border-slate-200/40 bg-white shadow-[0_4px_20px_-2px_rgba(15,23,42,0.05)] transition-all duration-300 hover:shadow-xl">
 
-              <dl class="mt-4 space-y-3 text-sm">
-                <div>
-                  <dt class="font-semibold text-brand">The problem</dt>
-                  <dd class="mt-0.5 leading-relaxed text-slate-600">Early decay in four molars across two siblings, with a first visit that had gone badly at another clinic.</dd>
+              <div class="relative aspect-[16/10] overflow-hidden">
+                <img src="../assets/ImplantsLg.webp" alt="Single anterior dental implant with a matched ceramic crown"
+                  class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  width="600" height="450" loading="lazy" decoding="async">
+                <div class="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-ink/90 via-ink/20 to-transparent p-6 sm:p-8">
+                  <span class="mb-3 inline-block self-start rounded-lg bg-brand/90 px-3 py-1 text-[0.7rem] font-bold uppercase tracking-[0.15em] text-white">Implants</span>
+                  <h3 class="font-display text-xl font-bold text-white sm:text-2xl lg:text-3xl">Single Tooth Implant, Front Zone</h3>
+                  <p class="mt-2 text-xs uppercase tracking-widest text-white/70">Male, 34 · 5 months</p>
                 </div>
-                <div>
-                  <dt class="font-semibold text-brand">What we did</dt>
-                  <dd class="mt-0.5 leading-relaxed text-slate-600">A no-treatment familiarisation visit first, then tooth-coloured fillings, sealants on all permanent molars, and a diet review with the parents.</dd>
-                </div>
-                <div>
-                  <dt class="font-semibold text-brand">The result</dt>
-                  <dd class="mt-0.5 leading-relaxed text-slate-600">No new cavities across two years of six-monthly reviews, and both children now attend without complaint.</dd>
-                </div>
-              </dl>
+              </div>
 
-              <a href="../services/pediatric-dentistry/index.html"
-                class="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-brand transition hover:gap-3">
-                About this treatment <i class="fas fa-arrow-right text-xs"></i>
-              </a>
-            </div>
-          </article>
-          <article class="reveal card-hover group overflow-hidden">
-            <div class="service-media relative overflow-hidden bg-surface">
-              <img src="../assets/TeethWhiteningLg.webp" alt="Professional scaling followed by in-clinic whitening"
-                class="h-full w-full object-cover transition duration-500 group-hover:scale-105" width="600" height="450"
-                loading="lazy" decoding="async">
-              <span class="absolute left-4 top-4 rounded-full bg-white/95 px-3 py-1 text-xs font-bold text-brand">Cosmetic</span>
-            </div>
-            <div class="p-6">
-              <h3 class="font-display text-xl font-bold text-ink">Cleaning &amp; Whitening Refresh</h3>
-              <p class="mt-1 text-xs uppercase tracking-widest text-slate-400">Female, 38 · 4 weeks</p>
+              <div class="p-6 sm:p-8">
+                <p class="text-[1.0625rem] leading-relaxed text-slate-500">Upper front tooth fractured below the gum line after a sports injury and could not be saved.</p>
 
-              <dl class="mt-4 space-y-3 text-sm">
-                <div>
-                  <dt class="font-semibold text-brand">The problem</dt>
-                  <dd class="mt-0.5 leading-relaxed text-slate-600">Heavy tea and coffee staining with bleeding gums, and a wedding six weeks away.</dd>
-                </div>
-                <div>
-                  <dt class="font-semibold text-brand">What we did</dt>
-                  <dd class="mt-0.5 leading-relaxed text-slate-600">Full scaling and root planing to resolve the gum inflammation first, then in-clinic whitening once the gums were healthy.</dd>
-                </div>
-                <div>
-                  <dt class="font-semibold text-brand">The result</dt>
-                  <dd class="mt-0.5 leading-relaxed text-slate-600">Bleeding resolved within two weeks and the shade lifted noticeably, maintained afterwards with a take-home top-up kit.</dd>
-                </div>
-              </dl>
+                <dl class="mt-6 space-y-4 border-t border-slate-100 pt-6 text-sm">
+                  <div>
+                    <dt class="text-xs font-bold uppercase tracking-[0.15em] text-brand">What we did</dt>
+                    <dd class="mt-1 leading-relaxed text-slate-600">Atraumatic extraction with immediate socket grafting, implant placed after healing, then a layered ceramic crown shade-matched to the adjacent tooth.</dd>
+                  </div>
+                  <div>
+                    <dt class="text-xs font-bold uppercase tracking-[0.15em] text-brand">The result</dt>
+                    <dd class="mt-1 leading-relaxed text-slate-600">The restored tooth is indistinguishable from its neighbour in normal light, with the gum contour preserved.</dd>
+                  </div>
+                </dl>
 
-              <a href="../services/teeth-cleaning-whitening/index.html"
-                class="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-brand transition hover:gap-3">
-                About this treatment <i class="fas fa-arrow-right text-xs"></i>
-              </a>
-            </div>
-          </article>
-          <article class="reveal card-hover group overflow-hidden">
-            <div class="service-media relative overflow-hidden bg-surface">
-              <img src="../assets/CrownsLg.webp" alt="Zirconia crowns restoring cracked posterior teeth"
-                class="h-full w-full object-cover transition duration-500 group-hover:scale-105" width="600" height="450"
-                loading="lazy" decoding="async">
-              <span class="absolute left-4 top-4 rounded-full bg-white/95 px-3 py-1 text-xs font-bold text-brand">Restorative</span>
-            </div>
-            <div class="p-6">
-              <h3 class="font-display text-xl font-bold text-ink">Crowns for a Cracked Tooth Pattern</h3>
-              <p class="mt-1 text-xs uppercase tracking-widest text-slate-400">Male, 49 · 6 weeks</p>
+                <a href="../services/dental-implants/index.html"
+                  class="mt-8 inline-flex w-full items-center justify-center gap-2 rounded-xl border border-brand/20 px-6 py-3 text-base font-bold text-brand transition-all duration-300 hover:bg-brand hover:text-white hover:shadow-lg active:scale-[0.98]">
+                  View Case Analysis <i class="fas fa-arrow-right text-xs" aria-hidden="true"></i>
+                </a>
+              </div>
 
-              <dl class="mt-4 space-y-3 text-sm">
-                <div>
-                  <dt class="font-semibold text-brand">The problem</dt>
-                  <dd class="mt-0.5 leading-relaxed text-slate-600">Repeated cracks in heavily filled back teeth caused by long-term night grinding.</dd>
-                </div>
-                <div>
-                  <dt class="font-semibold text-brand">What we did</dt>
-                  <dd class="mt-0.5 leading-relaxed text-slate-600">Zirconia crowns on three compromised molars to take the load off the remaining tooth structure, plus a custom night guard.</dd>
-                </div>
-                <div>
-                  <dt class="font-semibold text-brand">The result</dt>
-                  <dd class="mt-0.5 leading-relaxed text-slate-600">No further fractures across three years of reviews, and the night guard is now absorbing the wear instead of the teeth.</dd>
-                </div>
-              </dl>
-
-              <a href="../services/crowns-bridges/index.html"
-                class="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-brand transition hover:gap-3">
-                About this treatment <i class="fas fa-arrow-right text-xs"></i>
-              </a>
             </div>
-          </article>
+          </div>
+          <div class="reveal group">
+            <div class="h-full overflow-hidden rounded-3xl border border-slate-200/40 bg-white shadow-[0_4px_20px_-2px_rgba(15,23,42,0.05)] transition-all duration-300 hover:shadow-xl">
+
+              <div class="relative aspect-[16/10] overflow-hidden">
+                <img src="../assets/SmileMakeoverLg.webp" alt="Smile makeover using porcelain veneers"
+                  class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  width="600" height="450" loading="lazy" decoding="async">
+                <div class="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-ink/90 via-ink/20 to-transparent p-6 sm:p-8">
+                  <span class="mb-3 inline-block self-start rounded-lg bg-brand/90 px-3 py-1 text-[0.7rem] font-bold uppercase tracking-[0.15em] text-white">Cosmetic</span>
+                  <h3 class="font-display text-xl font-bold text-white sm:text-2xl lg:text-3xl">Smile Makeover with Veneers</h3>
+                  <p class="mt-2 text-xs uppercase tracking-widest text-white/70">Female, 27 · 3 weeks</p>
+                </div>
+              </div>
+
+              <div class="p-6 sm:p-8">
+                <p class="text-[1.0625rem] leading-relaxed text-slate-500">Uneven tooth widths, two chipped incisors and a shade the patient had never been happy with.</p>
+
+                <dl class="mt-6 space-y-4 border-t border-slate-100 pt-6 text-sm">
+                  <div>
+                    <dt class="text-xs font-bold uppercase tracking-[0.15em] text-brand">What we did</dt>
+                    <dd class="mt-1 leading-relaxed text-slate-600">Digital smile design, a trial mock-up worn for a week, then eight minimal-preparation porcelain veneers on the upper arch.</dd>
+                  </div>
+                  <div>
+                    <dt class="text-xs font-bold uppercase tracking-[0.15em] text-brand">The result</dt>
+                    <dd class="mt-1 leading-relaxed text-slate-600">Even proportions and a natural shade gradation — the patient approved the exact look before any enamel was touched.</dd>
+                  </div>
+                </dl>
+
+                <a href="../services/cosmetic-dentistry/index.html"
+                  class="mt-8 inline-flex w-full items-center justify-center gap-2 rounded-xl border border-brand/20 px-6 py-3 text-base font-bold text-brand transition-all duration-300 hover:bg-brand hover:text-white hover:shadow-lg active:scale-[0.98]">
+                  View Case Analysis <i class="fas fa-arrow-right text-xs" aria-hidden="true"></i>
+                </a>
+              </div>
+
+            </div>
+          </div>
+          <div class="reveal group">
+            <div class="h-full overflow-hidden rounded-3xl border border-slate-200/40 bg-white shadow-[0_4px_20px_-2px_rgba(15,23,42,0.05)] transition-all duration-300 hover:shadow-xl">
+
+              <div class="relative aspect-[16/10] overflow-hidden">
+                <img src="../assets/RCTLg.webp" alt="Emergency root canal treatment followed by a protective crown"
+                  class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  width="600" height="450" loading="lazy" decoding="async">
+                <div class="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-ink/90 via-ink/20 to-transparent p-6 sm:p-8">
+                  <span class="mb-3 inline-block self-start rounded-lg bg-brand/90 px-3 py-1 text-[0.7rem] font-bold uppercase tracking-[0.15em] text-white">Emergency</span>
+                  <h3 class="font-display text-xl font-bold text-white sm:text-2xl lg:text-3xl">Emergency Root Canal &amp; Crown</h3>
+                  <p class="mt-2 text-xs uppercase tracking-widest text-white/70">Female, 44 · 3 weeks</p>
+                </div>
+              </div>
+
+              <div class="p-6 sm:p-8">
+                <p class="text-[1.0625rem] leading-relaxed text-slate-500">Severe throbbing pain in a lower molar that had kept the patient awake for three nights, with early facial swelling.</p>
+
+                <dl class="mt-6 space-y-4 border-t border-slate-100 pt-6 text-sm">
+                  <div>
+                    <dt class="text-xs font-bold uppercase tracking-[0.15em] text-brand">What we did</dt>
+                    <dd class="mt-1 leading-relaxed text-slate-600">Same-day emergency root canal to relieve pressure and remove the infected tissue, followed by a zirconia crown three weeks later.</dd>
+                  </div>
+                  <div>
+                    <dt class="text-xs font-bold uppercase tracking-[0.15em] text-brand">The result</dt>
+                    <dd class="mt-1 leading-relaxed text-slate-600">Pain resolved within hours of the first visit, and the tooth was saved rather than extracted.</dd>
+                  </div>
+                </dl>
+
+                <a href="../services/emergency-dental-care/index.html"
+                  class="mt-8 inline-flex w-full items-center justify-center gap-2 rounded-xl border border-brand/20 px-6 py-3 text-base font-bold text-brand transition-all duration-300 hover:bg-brand hover:text-white hover:shadow-lg active:scale-[0.98]">
+                  View Case Analysis <i class="fas fa-arrow-right text-xs" aria-hidden="true"></i>
+                </a>
+              </div>
+
+            </div>
+          </div>
+          <div class="reveal group">
+            <div class="h-full overflow-hidden rounded-3xl border border-slate-200/40 bg-white shadow-[0_4px_20px_-2px_rgba(15,23,42,0.05)] transition-all duration-300 hover:shadow-xl">
+
+              <div class="relative aspect-[16/10] overflow-hidden">
+                <img src="../assets/WisdomTeethRemovalLg.webp" alt="Surgical removal of an impacted wisdom tooth"
+                  class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  width="600" height="450" loading="lazy" decoding="async">
+                <div class="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-ink/90 via-ink/20 to-transparent p-6 sm:p-8">
+                  <span class="mb-3 inline-block self-start rounded-lg bg-brand/90 px-3 py-1 text-[0.7rem] font-bold uppercase tracking-[0.15em] text-white">Surgery</span>
+                  <h3 class="font-display text-xl font-bold text-white sm:text-2xl lg:text-3xl">Impacted Wisdom Tooth Removal</h3>
+                  <p class="mt-2 text-xs uppercase tracking-widest text-white/70">Male, 25 · Single visit</p>
+                </div>
+              </div>
+
+              <div class="p-6 sm:p-8">
+                <p class="text-[1.0625rem] leading-relaxed text-slate-500">A horizontally impacted lower wisdom tooth causing repeated gum infections and pressing against the molar in front.</p>
+
+                <dl class="mt-6 space-y-4 border-t border-slate-100 pt-6 text-sm">
+                  <div>
+                    <dt class="text-xs font-bold uppercase tracking-[0.15em] text-brand">What we did</dt>
+                    <dd class="mt-1 leading-relaxed text-slate-600">Surgical removal under local anaesthesia with sectioning of the tooth to minimise bone removal.</dd>
+                  </div>
+                  <div>
+                    <dt class="text-xs font-bold uppercase tracking-[0.15em] text-brand">The result</dt>
+                    <dd class="mt-1 leading-relaxed text-slate-600">Infections stopped completely and the adjacent molar was preserved. Normal eating resumed within four days.</dd>
+                  </div>
+                </dl>
+
+                <a href="../services/emergency-dental-care/index.html"
+                  class="mt-8 inline-flex w-full items-center justify-center gap-2 rounded-xl border border-brand/20 px-6 py-3 text-base font-bold text-brand transition-all duration-300 hover:bg-brand hover:text-white hover:shadow-lg active:scale-[0.98]">
+                  View Case Analysis <i class="fas fa-arrow-right text-xs" aria-hidden="true"></i>
+                </a>
+              </div>
+
+            </div>
+          </div>
+          <div class="reveal group">
+            <div class="h-full overflow-hidden rounded-3xl border border-slate-200/40 bg-white shadow-[0_4px_20px_-2px_rgba(15,23,42,0.05)] transition-all duration-300 hover:shadow-xl">
+
+              <div class="relative aspect-[16/10] overflow-hidden">
+                <img src="../assets/KidsDentistryLg.webp" alt="Preventive dental care programme for children"
+                  class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  width="600" height="450" loading="lazy" decoding="async">
+                <div class="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-ink/90 via-ink/20 to-transparent p-6 sm:p-8">
+                  <span class="mb-3 inline-block self-start rounded-lg bg-brand/90 px-3 py-1 text-[0.7rem] font-bold uppercase tracking-[0.15em] text-white">Pediatric</span>
+                  <h3 class="font-display text-xl font-bold text-white sm:text-2xl lg:text-3xl">Children's Preventive Programme</h3>
+                  <p class="mt-2 text-xs uppercase tracking-widest text-white/70">Two siblings, 6 and 9 · 2 years of reviews</p>
+                </div>
+              </div>
+
+              <div class="p-6 sm:p-8">
+                <p class="text-[1.0625rem] leading-relaxed text-slate-500">Early decay in four molars across two siblings, with a first visit that had gone badly at another clinic.</p>
+
+                <dl class="mt-6 space-y-4 border-t border-slate-100 pt-6 text-sm">
+                  <div>
+                    <dt class="text-xs font-bold uppercase tracking-[0.15em] text-brand">What we did</dt>
+                    <dd class="mt-1 leading-relaxed text-slate-600">A no-treatment familiarisation visit first, then tooth-coloured fillings, sealants on all permanent molars, and a diet review with the parents.</dd>
+                  </div>
+                  <div>
+                    <dt class="text-xs font-bold uppercase tracking-[0.15em] text-brand">The result</dt>
+                    <dd class="mt-1 leading-relaxed text-slate-600">No new cavities across two years of six-monthly reviews, and both children now attend without complaint.</dd>
+                  </div>
+                </dl>
+
+                <a href="../services/pediatric-dentistry/index.html"
+                  class="mt-8 inline-flex w-full items-center justify-center gap-2 rounded-xl border border-brand/20 px-6 py-3 text-base font-bold text-brand transition-all duration-300 hover:bg-brand hover:text-white hover:shadow-lg active:scale-[0.98]">
+                  View Case Analysis <i class="fas fa-arrow-right text-xs" aria-hidden="true"></i>
+                </a>
+              </div>
+
+            </div>
+          </div>
+          <div class="reveal group">
+            <div class="h-full overflow-hidden rounded-3xl border border-slate-200/40 bg-white shadow-[0_4px_20px_-2px_rgba(15,23,42,0.05)] transition-all duration-300 hover:shadow-xl">
+
+              <div class="relative aspect-[16/10] overflow-hidden">
+                <img src="../assets/TeethWhiteningLg.webp" alt="Professional scaling followed by in-clinic whitening"
+                  class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  width="600" height="450" loading="lazy" decoding="async">
+                <div class="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-ink/90 via-ink/20 to-transparent p-6 sm:p-8">
+                  <span class="mb-3 inline-block self-start rounded-lg bg-brand/90 px-3 py-1 text-[0.7rem] font-bold uppercase tracking-[0.15em] text-white">Cosmetic</span>
+                  <h3 class="font-display text-xl font-bold text-white sm:text-2xl lg:text-3xl">Cleaning &amp; Whitening Refresh</h3>
+                  <p class="mt-2 text-xs uppercase tracking-widest text-white/70">Female, 38 · 4 weeks</p>
+                </div>
+              </div>
+
+              <div class="p-6 sm:p-8">
+                <p class="text-[1.0625rem] leading-relaxed text-slate-500">Heavy tea and coffee staining with bleeding gums, and a wedding six weeks away.</p>
+
+                <dl class="mt-6 space-y-4 border-t border-slate-100 pt-6 text-sm">
+                  <div>
+                    <dt class="text-xs font-bold uppercase tracking-[0.15em] text-brand">What we did</dt>
+                    <dd class="mt-1 leading-relaxed text-slate-600">Full scaling and root planing to resolve the gum inflammation first, then in-clinic whitening once the gums were healthy.</dd>
+                  </div>
+                  <div>
+                    <dt class="text-xs font-bold uppercase tracking-[0.15em] text-brand">The result</dt>
+                    <dd class="mt-1 leading-relaxed text-slate-600">Bleeding resolved within two weeks and the shade lifted noticeably, maintained afterwards with a take-home top-up kit.</dd>
+                  </div>
+                </dl>
+
+                <a href="../services/teeth-cleaning-whitening/index.html"
+                  class="mt-8 inline-flex w-full items-center justify-center gap-2 rounded-xl border border-brand/20 px-6 py-3 text-base font-bold text-brand transition-all duration-300 hover:bg-brand hover:text-white hover:shadow-lg active:scale-[0.98]">
+                  View Case Analysis <i class="fas fa-arrow-right text-xs" aria-hidden="true"></i>
+                </a>
+              </div>
+
+            </div>
+          </div>
+          <div class="reveal group">
+            <div class="h-full overflow-hidden rounded-3xl border border-slate-200/40 bg-white shadow-[0_4px_20px_-2px_rgba(15,23,42,0.05)] transition-all duration-300 hover:shadow-xl">
+
+              <div class="relative aspect-[16/10] overflow-hidden">
+                <img src="../assets/CrownsLg.webp" alt="Zirconia crowns restoring cracked posterior teeth"
+                  class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  width="600" height="450" loading="lazy" decoding="async">
+                <div class="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-ink/90 via-ink/20 to-transparent p-6 sm:p-8">
+                  <span class="mb-3 inline-block self-start rounded-lg bg-brand/90 px-3 py-1 text-[0.7rem] font-bold uppercase tracking-[0.15em] text-white">Restorative</span>
+                  <h3 class="font-display text-xl font-bold text-white sm:text-2xl lg:text-3xl">Crowns for a Cracked Tooth Pattern</h3>
+                  <p class="mt-2 text-xs uppercase tracking-widest text-white/70">Male, 49 · 6 weeks</p>
+                </div>
+              </div>
+
+              <div class="p-6 sm:p-8">
+                <p class="text-[1.0625rem] leading-relaxed text-slate-500">Repeated cracks in heavily filled back teeth caused by long-term night grinding.</p>
+
+                <dl class="mt-6 space-y-4 border-t border-slate-100 pt-6 text-sm">
+                  <div>
+                    <dt class="text-xs font-bold uppercase tracking-[0.15em] text-brand">What we did</dt>
+                    <dd class="mt-1 leading-relaxed text-slate-600">Zirconia crowns on three compromised molars to take the load off the remaining tooth structure, plus a custom night guard.</dd>
+                  </div>
+                  <div>
+                    <dt class="text-xs font-bold uppercase tracking-[0.15em] text-brand">The result</dt>
+                    <dd class="mt-1 leading-relaxed text-slate-600">No further fractures across three years of reviews, and the night guard is now absorbing the wear instead of the teeth.</dd>
+                  </div>
+                </dl>
+
+                <a href="../services/crowns-bridges/index.html"
+                  class="mt-8 inline-flex w-full items-center justify-center gap-2 rounded-xl border border-brand/20 px-6 py-3 text-base font-bold text-brand transition-all duration-300 hover:bg-brand hover:text-white hover:shadow-lg active:scale-[0.98]">
+                  View Case Analysis <i class="fas fa-arrow-right text-xs" aria-hidden="true"></i>
+                </a>
+              </div>
+
+            </div>
+          </div>
         </div>
 
-        <p class="reveal mt-10 rounded-2xl bg-surface p-6 text-sm leading-relaxed text-slate-600">
-          <strong class="text-ink">A note on expectations:</strong> these cases illustrate what is clinically achievable,
-          not what is guaranteed. Treatment times and outcomes vary between patients. We will tell you honestly at your
-          consultation what is realistic for your own case, including when a treatment is not the right choice for you.
-        </p>
+        <div class="reveal mt-16 text-center">
+          <a href="../book-appointment/index.html"
+            class="inline-flex items-center justify-center gap-3 rounded-2xl px-12 py-6 text-lg font-semibold text-white shadow-brand transition duration-300 hover:brightness-110 active:scale-[0.98]"
+            style="background-image: linear-gradient(90deg, #030A14 0%, #1A4996 100%);">
+            Start Your Transformation <i class="fas fa-arrow-right text-sm" aria-hidden="true"></i>
+          </a>
+        </div>
+
       </div>
     </section>
 
     <!-- CTA -->
-    <section class="bg-brand-gradient bg-dot-grid py-14 lg:py-20">
-      <div class="container-x">
-        <div class="reveal flex flex-col items-start gap-8 lg:flex-row lg:items-center lg:justify-between">
-          <div class="max-w-2xl">
-            <h2 class="font-display text-3xl font-bold leading-tight text-white sm:text-4xl">Want to Know What's Possible for You?</h2>
-            <p class="mt-4 text-base leading-relaxed text-brand-soft">Bring your question to a consultation. We will examine, explain your options and give you a written estimate.</p>
-          </div>
-          <div class="flex flex-wrap gap-4">
-            <a href="../book-appointment/index.html" class="btn-gold">Book Appointment</a>
-            <a href="tel:+919030271023" class="btn-ghost-light"><i class="fas fa-phone text-sm"></i> +91 90302 71023</a>
+    <section class="section-pad relative overflow-hidden bg-surface">
+      <div class="container-x relative z-10">
+        <div class="reveal relative overflow-hidden rounded-[2.5rem] bg-ink p-8 shadow-2xl lg:rounded-[3.5rem] lg:p-16">
+          <span aria-hidden="true"
+            class="pointer-events-none absolute -right-20 -top-20 h-96 w-96 rounded-full bg-brand/20 blur-[100px]"></span>
+          <span aria-hidden="true"
+            class="pointer-events-none absolute -bottom-20 -left-20 h-64 w-64 rounded-full bg-brand-soft/10 blur-[100px]"></span>
+
+          <div class="relative z-10 flex flex-col items-center justify-between gap-12 lg:flex-row lg:gap-20">
+            <div class="max-w-3xl text-center lg:text-left">
+              <span class="mb-8 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-6 py-2 text-sm font-bold text-white">
+                Ready for Your Transformation?
+              </span>
+              <h2 class="mb-6 font-display text-2xl font-bold leading-[1.15] text-white sm:text-3xl lg:text-4xl xl:text-[3.5rem]">
+                Book your <span class="italic">consultation</span> today
+              </h2>
+              <p class="mx-auto max-w-xl text-base leading-relaxed text-slate-400 lg:mx-0 lg:text-xl">
+                Get treated by experienced dentists in Manikonda with advanced and painless dental care.
+              </p>
+
+              <div class="mt-12 hidden flex-wrap justify-start gap-12 lg:flex">
+                <div class="flex items-start gap-3">
+                  <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-white/10 bg-white/5 text-brand-soft">
+                    <i class="fas fa-phone text-sm" aria-hidden="true"></i>
+                  </span>
+                  <span class="flex flex-col">
+                    <a href="tel:+919030271023" class="text-lg font-bold leading-tight text-white transition hover:text-brand-soft">+91 90302 71023</a>
+                    <a href="tel:+917416860888" class="mt-1 text-lg font-bold leading-tight text-white transition hover:text-brand-soft">+91 74168 60888</a>
+                  </span>
+                </div>
+                <div class="flex items-start gap-3">
+                  <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-white/10 bg-white/5 text-brand-soft">
+                    <i class="fas fa-clock text-sm" aria-hidden="true"></i>
+                  </span>
+                  <span class="flex flex-col">
+                    <span class="text-base font-bold leading-tight text-white">Mon &ndash; Sat: 10AM &ndash; 2PM, 4PM &ndash; 8PM</span>
+                    <span class="mt-1 text-base font-bold leading-tight text-white">Sun: 10AM &ndash; 1PM</span>
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <div class="flex w-full shrink-0 flex-col items-center gap-6 sm:w-auto">
+              <a href="../book-appointment/index.html"
+                class="inline-flex h-14 w-full max-w-md items-center justify-center gap-3 rounded-xl bg-brand px-6 text-base font-bold text-white shadow-xl shadow-brand transition hover:bg-brand-mid active:scale-[0.98] sm:min-w-[320px] lg:h-16 lg:px-10 lg:text-xl">
+                Book Consultation <i class="fas fa-arrow-right text-sm" aria-hidden="true"></i>
+              </a>
+              <a href="https://wa.me/919030271023" target="_blank" rel="noopener noreferrer"
+                class="inline-flex h-14 w-full max-w-md items-center justify-center gap-3 rounded-xl border border-slate-200 bg-white px-6 text-base font-bold text-ink shadow-sm transition hover:bg-slate-50 active:scale-[0.98] sm:min-w-[320px] lg:h-16 lg:px-10 lg:text-xl">
+                <i class="fab fa-whatsapp text-xl text-whatsapp" aria-hidden="true"></i> WhatsApp us
+              </a>
+            </div>
           </div>
         </div>
       </div>
