@@ -27,7 +27,7 @@
 
   /* Typography */
   --font-sans: "Poppins", ui-sans-serif, system-ui, -apple-system, sans-serif;
-  --font-display: "Playfair Display", Georgia, "Times New Roman", serif;
+  --font-display: "Poppins", ui-sans-serif, system-ui, -apple-system, sans-serif;
 
   /* Elevation */
   --shadow-card: 0 4px 20px rgba(10, 29, 61, 0.06);
@@ -41,6 +41,10 @@
    stylesheet, kept under conventional names so the palette can be
    retuned from one place. The @theme block above exposes the same
    colours as Tailwind utilities; these are for hand-written CSS.
+   SEMANTIC ALIASES
+   Same values as the @theme tokens above, exposed under the
+   generic names used across the design system (primary, surface,
+   border …) so plain CSS can reference them too.
    ============================================================== */
 :root {
   --primary: #1a4996;
@@ -67,6 +71,20 @@
   --container-max: 80rem; /* 1280px */
   --radius-card: 1.5rem; /* 24px */
   --nav-h: 4rem; /* 64px, 80px from sm up */
+  --secondary: #0a1a35;
+  --accent: #fbbc05;
+  --heading: #030a14;
+  --text: #45556c;
+  --muted: #62748e;
+  --background: #ffffff;
+  --surface: #eef5ff;
+  --surface-2: #fefeff;
+  --card: #ffffff;
+  --input-bg: #ffffff;
+  --border: #e2e8f0;
+  --button: #1a4996;
+  --button-hover: #1a3a6b;
+  --icon-bg: #eef5ff;
 }
 
 /* ==============================================================
@@ -142,6 +160,11 @@
 
   .eyebrow {
     @apply mb-3 block text-[11px] font-bold uppercase tracking-[0.22em] text-brand sm:text-xs;
+  }
+
+  /* Brand-blue rule instead of gold, for light sections */
+  .eyebrow-brand::before {
+    @apply bg-brand;
   }
 
   .h-section {

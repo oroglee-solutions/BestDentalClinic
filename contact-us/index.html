@@ -144,48 +144,6 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "@id": "https://www.bestdentalclinic.com/contact-us/#faq",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "Do I need an appointment, or can I walk in?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Walk-ins are welcome and we will always see genuine emergencies, but booking ahead means far less waiting. Call +91 90302 71023 or use the booking form and we will confirm your slot."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Where exactly are you located?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Alkapur Township, Manikonda, Hyderabad, Telangana 500089. We are a short drive from Manikonda main road, with parking available and ground-floor access."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Which payment methods do you accept?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Cash, all major credit and debit cards, and UPI. No-cost EMI is available on major treatments such as implants, aligners and full mouth rehabilitation — ask at the front desk."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How quickly do you reply to online enquiries?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Within one working day for form and email enquiries. For anything urgent, call +91 90302 71023 during clinic hours rather than waiting on email."
-        }
-      }
-    ]
-  }
-  </script>
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     "itemListElement": [
       {
@@ -379,201 +337,249 @@
 
 
     <!-- PAGE HERO -->
-    <section class="relative overflow-hidden bg-brand-gradient bg-dot-grid py-14 lg:py-20">
+    <section class="relative w-full overflow-hidden"
+      style="background: linear-gradient(180deg, #EEF5FF 0%, #FEFEFF 51%, #EEF5FF 95%);">
       <div class="container-x relative">
-        <nav aria-label="Breadcrumb" class="mb-5">
-          <ol class="flex flex-wrap items-center gap-2 text-xs text-brand-soft">
-            <li><a href="../index.html" class="transition hover:text-gold">Home</a></li>
-            <li aria-hidden="true"><i class="fas fa-chevron-right text-[8px]"></i></li>
-            <li class="font-semibold text-white" aria-current="page">Contact Us</li>
-          </ol>
-        </nav>
+        <div class="grid items-center gap-8 py-12 sm:min-h-[420px] sm:grid-cols-2 sm:gap-6 lg:py-16">
 
-        <h1 class="max-w-3xl font-display text-4xl font-bold leading-tight text-white sm:text-5xl lg:text-[3.25rem]">
-          Get in Touch With Our Experts
-        </h1>
-        <p class="mt-5 max-w-2xl text-base leading-relaxed text-brand-soft sm:text-lg">
-          Have questions? We're here to help you achieve your perfect smile. Visit us in Manikonda or contact us directly — we answer questions without pushing treatment.
-        </p>
+          <div class="text-center sm:text-left">
+            <h1 class="font-display text-2xl font-extrabold leading-[1.2] sm:text-4xl lg:text-5xl">
+              <span class="text-black">Get in Touch</span><br>
+              <span class="text-brand">With Our Experts</span>
+            </h1>
+            <p class="mx-auto mt-4 max-w-xl text-base leading-relaxed text-slate-600 sm:mx-0 sm:mt-5 sm:text-lg">
+              Have questions? We're here to help you achieve your perfect smile. Visit us in Manikonda or contact us
+              directly &mdash; we answer questions without pushing treatment.
+            </p>
 
-        <div class="mt-8 flex flex-wrap gap-4">
-          <a href="tel:+919030271023" class="btn-gold"><i class="fas fa-phone text-sm"></i> +91 90302 71023</a>
-          <a href="https://wa.me/919030271023" target="_blank" rel="noopener noreferrer" class="btn-ghost-light"><i class="fab fa-whatsapp text-lg"></i> WhatsApp Us</a>
+            <div class="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center">
+              <a href="tel:+919030271023"
+                class="inline-flex h-14 items-center justify-center gap-3 rounded-xl bg-brand px-8 text-base font-bold text-white shadow-brand transition hover:bg-brand-mid active:scale-[0.98]">
+                <i class="fas fa-phone text-sm" aria-hidden="true"></i> +91 90302 71023
+              </a>
+              <a href="https://wa.me/919030271023" target="_blank" rel="noopener noreferrer"
+                class="inline-flex h-14 items-center justify-center gap-3 rounded-xl border border-slate-200 bg-white px-8 text-base font-bold text-ink shadow-sm transition hover:bg-slate-50 active:scale-[0.98]">
+                <i class="fab fa-whatsapp text-lg text-whatsapp" aria-hidden="true"></i> WhatsApp us
+              </a>
+            </div>
+          </div>
+
+          <div class="relative h-52 w-full sm:h-full sm:min-h-[420px]">
+            <!-- Placeholder — swap the file at assets/contact-hero-img.png, same 900x760 frame -->
+            <img src="../assets/contact-hero-img.png"
+              alt="Best Dental Clinic reception team in Manikonda, Hyderabad, ready to answer patient enquiries"
+              class="h-full w-full object-contain object-center sm:object-bottom-right" width="900" height="760"
+              fetchpriority="high" decoding="async">
+          </div>
+
         </div>
       </div>
     </section>
 
-    <!-- CONTACT CARDS -->
-    <section class="section-pad bg-white">
+    <!-- CONTACT INFO + APPOINTMENT FORM -->
+    <section id="contact" class="section-pad overflow-hidden bg-white">
       <div class="container-x">
-        <div class="reveal-group grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div class="mx-auto grid max-w-7xl grid-cols-1 items-start gap-12 lg:grid-cols-2 lg:gap-24">
 
-          <div class="reveal card p-7">
-            <span class="flex h-12 w-12 items-center justify-center rounded-xl bg-brand text-xl text-white">
-              <i class="fas fa-location-dot"></i>
+          <div class="reveal space-y-12 lg:pr-4">
+            <div>
+              <span class="mb-4 block text-xs font-bold uppercase tracking-[0.2em] text-brand">Contact Us</span>
+              <h2 class="h-section">Visit Our Dental Clinic in <span class="text-brand">Manikonda, Hyderabad</span></h2>
+              <p class="lede">Professional dental care you can trust in Hyderabad.</p>
+            </div>
+
+            <div class="space-y-10">
+
+              <div class="flex items-start gap-4 sm:gap-6">
+                <span class="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border border-brand/10 bg-gradient-to-br from-surface to-surface-2 text-xl text-brand shadow-sm transition-transform duration-300 hover:scale-110 sm:h-14 sm:w-14">
+              <i class="fas fa-location-dot" aria-hidden="true"></i>
             </span>
-            <h2 class="mt-5 text-lg font-bold text-ink">Our Location</h2>
-            <p class="mt-2 text-sm leading-relaxed text-slate-600">
-              Alkapur Township, Manikonda,<br>Hyderabad, Telangana 500089
+                <div>
+                  <h3 class="mb-1.5 text-lg font-bold text-ink sm:mb-2 sm:text-xl">Location</h3>
+                  <p class="text-base leading-relaxed text-slate-600">
+                    Alkapur Township, Manikonda,<br>Hyderabad, Telangana 500089
+                  </p>
+                  <a href="https://www.google.com/maps?q=Alkapur+Township,+Manikonda,+Hyderabad" target="_blank"
+                    rel="noopener noreferrer"
+                    class="mt-3 inline-flex items-center gap-2 text-sm font-bold text-brand transition hover:gap-3">
+                    Get directions <i class="fas fa-arrow-right text-xs" aria-hidden="true"></i>
+                  </a>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-4 sm:gap-6">
+                <span class="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border border-brand/10 bg-gradient-to-br from-surface to-surface-2 text-xl text-brand shadow-sm transition-transform duration-300 hover:scale-110 sm:h-14 sm:w-14">
+              <i class="fas fa-phone" aria-hidden="true"></i>
+            </span>
+                <div>
+                  <h3 class="mb-1.5 text-lg font-bold text-ink sm:mb-2 sm:text-xl">Phone</h3>
+                  <div class="flex flex-col gap-1">
+                    <p class="text-lg font-bold text-ink">
+                      <a href="tel:+919030271023" class="transition-colors hover:text-brand">+91 90302 71023</a>
+                    </p>
+                    <p class="text-lg font-bold text-ink">
+                      <a href="tel:+917416860888" class="transition-colors hover:text-brand">+91 74168 60888</a>
+                    </p>
+                  </div>
+                  <p class="mt-2 text-sm text-slate-500">Emergencies: please call rather than book online.</p>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-4 sm:gap-6">
+                <span class="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border border-brand/10 bg-gradient-to-br from-surface to-surface-2 text-xl text-brand shadow-sm transition-transform duration-300 hover:scale-110 sm:h-14 sm:w-14">
+              <i class="fas fa-envelope" aria-hidden="true"></i>
+            </span>
+                <div>
+                  <h3 class="mb-1.5 text-lg font-bold text-ink sm:mb-2 sm:text-xl">Email</h3>
+                  <p class="break-all text-base leading-relaxed text-slate-600">
+                    <a href="mailto:bestdentalclinic@gmail.com" class="transition-colors hover:text-brand">bestdentalclinic@gmail.com</a>
+                  </p>
+                  <p class="mt-2 text-sm text-slate-500">We reply within one working day.</p>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-4 sm:gap-6">
+                <span class="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border border-brand/10 bg-gradient-to-br from-surface to-surface-2 text-xl text-brand shadow-sm transition-transform duration-300 hover:scale-110 sm:h-14 sm:w-14">
+              <i class="fas fa-clock" aria-hidden="true"></i>
+            </span>
+                <div>
+                  <h3 class="mb-1.5 text-lg font-bold text-ink sm:mb-2 sm:text-xl">Timings</h3>
+                  <div class="flex flex-col gap-1 text-base font-medium text-slate-600">
+                    <span class="font-bold text-ink">Mon &ndash; Sat:</span>
+                    <span>10:00 AM &ndash; 02:00 PM</span>
+                    <span>04:00 PM &ndash; 08:00 PM</span>
+                    <span class="mt-2 font-bold text-ink">Sunday:</span>
+                    <span>10:00 AM &ndash; 01:00 PM</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="flex items-center gap-4">
+                <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"
+                  class="flex h-11 w-11 items-center justify-center rounded-full border border-brand/15 text-slate-500 transition hover:border-brand hover:text-brand">
+                  <i class="fab fa-facebook-f" aria-hidden="true"></i>
+                </a>
+                <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"
+                  class="flex h-11 w-11 items-center justify-center rounded-full border border-brand/15 text-slate-500 transition hover:border-brand hover:text-brand">
+                  <i class="fab fa-instagram" aria-hidden="true"></i>
+                </a>
+                <a href="https://wa.me/919030271023" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"
+                  class="flex h-11 w-11 items-center justify-center rounded-full border border-brand/15 text-slate-500 transition hover:border-brand hover:text-brand">
+                  <i class="fab fa-whatsapp" aria-hidden="true"></i>
+                </a>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="reveal relative w-full overflow-hidden rounded-[2.5rem] p-5 shadow-brand sm:p-8 lg:p-12"
+            style="background-image: linear-gradient(135deg, #030A14 0%, #1A4996 100%);">
+            <span aria-hidden="true"
+              class="pointer-events-none absolute -right-16 -top-16 h-64 w-64 rounded-full bg-white/5 blur-3xl"></span>
+
+            <h2 class="relative z-10 mb-2 font-display text-2xl font-bold text-white lg:mb-4 lg:text-3xl">Send Us a Message</h2>
+            <p class="relative z-10 mb-6 text-sm font-medium text-white/80 sm:text-base lg:mb-8">
+              Tell us what's bothering you and our team will get back to you.
             </p>
-            <a href="https://www.google.com/maps?q=Alkapur+Township,+Manikonda,+Hyderabad" target="_blank"
-              rel="noopener noreferrer"
-              class="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-brand transition hover:gap-3">
-              Get directions <i class="fas fa-arrow-right text-xs"></i>
+
+            <form id="contactForm" class="relative z-10 space-y-5 lg:space-y-6" novalidate>
+
+              <div class="space-y-2">
+                <label for="cname" class="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-white/90">
+                  <i class="fas fa-user text-brand-soft" aria-hidden="true"></i> Full Name
+                </label>
+                <input id="cname" name="name" type="text" placeholder="Enter your name" required
+                  class="w-full rounded-xl border border-transparent bg-white px-4 py-3 text-sm font-medium text-slate-900 outline-none transition-all focus:ring-2 focus:ring-white/30 sm:px-5 sm:py-4 sm:text-base">
+              </div>
+
+              <div class="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:gap-6">
+                <div class="space-y-2">
+                  <label for="cphone" class="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-white/90">
+                    <i class="fas fa-mobile-screen text-brand-soft" aria-hidden="true"></i> Phone Number
+                  </label>
+                  <input id="cphone" name="phone" type="tel" placeholder="10-digit mobile number"
+                    pattern="[0-9+\s-]{10,15}" required
+                    class="w-full rounded-xl border border-transparent bg-white px-4 py-3 text-sm font-medium text-slate-900 outline-none transition-all focus:ring-2 focus:ring-white/30 sm:px-5 sm:py-4 sm:text-base">
+                </div>
+                <div class="space-y-2">
+                  <label for="cemail" class="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-white/90">
+                    <i class="fas fa-envelope text-brand-soft" aria-hidden="true"></i> Email Address
+                  </label>
+                  <input id="cemail" name="email" type="email" placeholder="you@example.com" required
+                    class="w-full rounded-xl border border-transparent bg-white px-4 py-3 text-sm font-medium text-slate-900 outline-none transition-all focus:ring-2 focus:ring-white/30 sm:px-5 sm:py-4 sm:text-base">
+                </div>
+              </div>
+
+              <div class="space-y-2">
+                <label for="csubject" class="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-white/90">
+                  <i class="fas fa-stethoscope text-brand-soft" aria-hidden="true"></i> Subject
+                </label>
+                <input id="csubject" name="subject" type="text" placeholder="What is this about?" required
+                  class="w-full rounded-xl border border-transparent bg-white px-4 py-3 text-sm font-medium text-slate-900 outline-none transition-all focus:ring-2 focus:ring-white/30 sm:px-5 sm:py-4 sm:text-base">
+              </div>
+
+              <div class="space-y-2">
+                <label for="cmessage" class="text-xs font-bold uppercase tracking-wider text-white/90">Your Message</label>
+                <textarea id="cmessage" name="message" rows="4" placeholder="Tell us your concern" required
+                  class="w-full resize-y rounded-xl border border-transparent bg-white px-4 py-3 text-sm font-medium text-slate-900 outline-none transition-all focus:ring-2 focus:ring-white/30 sm:px-5 sm:py-4 sm:text-base"></textarea>
+              </div>
+
+              <button type="submit"
+                class="flex w-full items-center justify-center gap-3 rounded-2xl border border-white/20 bg-brand-deep py-4 text-base font-bold text-white shadow-xl shadow-black/20 transition duration-300 hover:scale-[1.02] hover:bg-brand sm:py-5 sm:text-lg">
+                <i class="fas fa-paper-plane text-sm" aria-hidden="true"></i> Send Message
+              </button>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ONLINE BOOKING + CALL -->
+    <section class="bg-surface py-16">
+      <div class="container-x">
+        <div class="reveal-group grid grid-cols-1 gap-8 md:grid-cols-2 lg:gap-12">
+
+          <div class="reveal flex h-full flex-col items-center gap-4 rounded-3xl border border-slate-200/60 bg-white p-8 shadow-sm transition hover:shadow-md md:items-start lg:p-10">
+            <div class="flex items-center gap-2.5 text-brand">
+              <span class="flex h-10 w-10 items-center justify-center rounded-xl bg-brand/10">
+                <i class="fas fa-calendar-check" aria-hidden="true"></i>
+              </span>
+              <span class="text-xs font-bold uppercase tracking-[0.2em]">Convenience</span>
+            </div>
+            <h2 class="font-display text-3xl font-bold text-ink">Online Appointment</h2>
+            <div class="flex items-center gap-3 rounded-xl bg-ink px-5 py-2 text-white">
+              <span class="text-xl font-black">20% OFF</span>
+              <span aria-hidden="true" class="h-6 w-px bg-white/20"></span>
+              <span class="text-xs font-bold uppercase tracking-wider">First Visit</span>
+            </div>
+            <p class="font-medium leading-relaxed text-slate-500">
+              Schedule your dental consultation online in just a few clicks. It's fast, secure and available 24/7.
+            </p>
+            <a href="../book-appointment/index.html"
+              class="mt-auto inline-flex h-14 items-center justify-center gap-3 rounded-xl bg-brand px-8 text-base font-bold text-white shadow-brand transition hover:bg-brand-mid active:scale-[0.98]">
+              Book Appointment <i class="fas fa-arrow-right text-xs" aria-hidden="true"></i>
             </a>
           </div>
 
-          <div class="reveal card p-7">
-            <span class="flex h-12 w-12 items-center justify-center rounded-xl bg-brand text-xl text-white">
-              <i class="fas fa-phone"></i>
-            </span>
-            <h2 class="mt-5 text-lg font-bold text-ink">Direct Help</h2>
-            <p class="mt-2 text-sm leading-relaxed text-slate-600">
-              <a href="tel:+919030271023" class="block transition hover:text-brand">+91 90302 71023</a>
-              <a href="tel:+917416860888" class="block transition hover:text-brand">+91 74168 60888</a>
-            </p>
-            <p class="mt-3 text-xs text-slate-500">Emergencies: call rather than book online.</p>
-          </div>
-
-          <div class="reveal card p-7">
-            <span class="flex h-12 w-12 items-center justify-center rounded-xl bg-brand text-xl text-white">
-              <i class="fas fa-envelope"></i>
-            </span>
-            <h2 class="mt-5 text-lg font-bold text-ink">Official Support</h2>
-            <p class="mt-2 break-all text-sm leading-relaxed text-slate-600">
-              <a href="mailto:bestdentalclinic@gmail.com" class="transition hover:text-brand">bestdentalclinic@gmail.com</a>
-            </p>
-            <p class="mt-3 text-xs text-slate-500">We reply within one working day.</p>
-          </div>
-
-          <div class="reveal card p-7">
-            <span class="flex h-12 w-12 items-center justify-center rounded-xl bg-brand text-xl text-white">
-              <i class="fas fa-clock"></i>
-            </span>
-            <h2 class="mt-5 text-lg font-bold text-ink">Clinic Hours</h2>
-            <p class="mt-2 text-sm leading-relaxed text-slate-600">
-              Mon–Sat: 10 AM – 2 PM<br>&amp; 4 PM – 8 PM<br>Sunday: 10 AM – 1 PM
-            </p>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- FORM + HOURS -->
-    <section class="section-pad bg-surface">
-      <div class="container-x">
-        <div class="grid gap-12 lg:grid-cols-[1.15fr_0.85fr] lg:gap-16">
-
-          <div class="reveal">
-            <p class="eyebrow">Send a Message</p>
-            <h2 class="h-section">Ask Us Anything</h2>
-            <p class="lede">
-              Not sure whether you need treatment? Describe what is happening and we will tell you honestly whether it
-              needs a visit.
-            </p>
-
-            <div class="mt-8 rounded-3xl bg-white p-6 shadow-card sm:p-8">
-              <form id="contactForm" class="space-y-4" novalidate>
-                <div class="grid gap-4 sm:grid-cols-2">
-                  <div>
-                    <label for="cname" class="field-label">Full Name</label>
-                    <input id="cname" name="name" type="text" class="field" placeholder="Your full name" required>
-                  </div>
-                  <div>
-                    <label for="cphone" class="field-label">Phone Number</label>
-                    <input id="cphone" name="phone" type="tel" class="field" placeholder="+91 XXXXX XXXXX"
-                      pattern="[0-9+\s-]{10,15}" required>
-                  </div>
-                </div>
-
-                <div>
-                  <label for="cemail" class="field-label">Email Address</label>
-                  <input id="cemail" name="email" type="email" class="field" placeholder="you@example.com" required>
-                </div>
-
-                <div>
-                  <label for="csubject" class="field-label">Subject</label>
-                  <input id="csubject" name="subject" type="text" class="field"
-                    placeholder="What is this about?" required>
-                </div>
-
-                <div>
-                  <label for="cmessage" class="field-label">Your Message</label>
-                  <textarea id="cmessage" name="message" rows="5" class="field"
-                    placeholder="Tell us what's bothering you, and when you'd prefer to come in" required></textarea>
-                </div>
-
-                <button type="submit" class="btn-primary w-full">
-                  <i class="fas fa-paper-plane text-sm"></i> Send Message
-                </button>
-              </form>
-            </div>
-          </div>
-
-          <div class="reveal space-y-6">
-            <div class="card overflow-hidden">
-              <div class="bg-brand-gradient bg-dot-grid p-6">
-                <h2 class="font-display text-xl font-bold text-white">Opening Hours</h2>
-                <p class="mt-1 text-sm text-brand-soft">Closed on public holidays</p>
-              </div>
-              <table class="w-full text-sm">
-                <caption class="sr-only">Best Dental Clinic opening hours</caption>
-                <tbody>
-                  <tr class="border-b border-slate-100">
-                    <th scope="row" class="p-4 text-left font-semibold text-ink">Monday</th>
-                    <td class="p-4 text-right text-slate-600">10 AM – 2 PM, 4 – 8 PM</td>
-                  </tr>
-                  <tr class="border-b border-slate-100">
-                    <th scope="row" class="p-4 text-left font-semibold text-ink">Tuesday</th>
-                    <td class="p-4 text-right text-slate-600">10 AM – 2 PM, 4 – 8 PM</td>
-                  </tr>
-                  <tr class="border-b border-slate-100">
-                    <th scope="row" class="p-4 text-left font-semibold text-ink">Wednesday</th>
-                    <td class="p-4 text-right text-slate-600">10 AM – 2 PM, 4 – 8 PM</td>
-                  </tr>
-                  <tr class="border-b border-slate-100">
-                    <th scope="row" class="p-4 text-left font-semibold text-ink">Thursday</th>
-                    <td class="p-4 text-right text-slate-600">10 AM – 2 PM, 4 – 8 PM</td>
-                  </tr>
-                  <tr class="border-b border-slate-100">
-                    <th scope="row" class="p-4 text-left font-semibold text-ink">Friday</th>
-                    <td class="p-4 text-right text-slate-600">10 AM – 2 PM, 4 – 8 PM</td>
-                  </tr>
-                  <tr class="border-b border-slate-100">
-                    <th scope="row" class="p-4 text-left font-semibold text-ink">Saturday</th>
-                    <td class="p-4 text-right text-slate-600">10 AM – 2 PM, 4 – 8 PM</td>
-                  </tr>
-                  <tr class="bg-surface/60">
-                    <th scope="row" class="p-4 text-left font-semibold text-ink">Sunday</th>
-                    <td class="p-4 text-right text-slate-600">10 AM – 1 PM</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-
-            <div class="rounded-2xl bg-brand-gradient bg-dot-grid p-7 text-white">
-              <span class="badge-gold !bg-gold !text-brand-deep">20% OFF First Visit</span>
-              <h2 class="mt-4 font-display text-xl font-bold">Book Online in a Few Clicks</h2>
-              <p class="mt-2 text-sm leading-relaxed text-brand-soft">
-                Schedule your dental consultation online — it's fast, secure and available 24/7.
-              </p>
-              <a href="../book-appointment/index.html" class="btn-gold mt-5 w-full">Book Appointment</a>
-            </div>
-
-            <div class="card p-7">
-              <span class="flex h-12 w-12 items-center justify-center rounded-xl bg-whatsapp text-2xl text-white">
-                <i class="fab fa-whatsapp"></i>
+          <div class="reveal flex h-full flex-col items-center gap-4 rounded-3xl border border-slate-200/60 bg-white p-8 shadow-sm transition hover:shadow-md md:items-start lg:p-10">
+            <div class="flex items-center gap-2.5 text-brand">
+              <span class="flex h-10 w-10 items-center justify-center rounded-xl bg-brand/10">
+                <i class="fas fa-phone" aria-hidden="true"></i>
               </span>
-              <h2 class="mt-5 text-lg font-bold text-ink">Prefer WhatsApp?</h2>
-              <p class="mt-2 text-sm leading-relaxed text-slate-600">
-                Send us a photo of what's bothering you and we'll tell you whether it needs a visit.
-              </p>
-              <a href="https://wa.me/919030271023" target="_blank" rel="noopener noreferrer"
-                class="btn mt-5 w-full bg-whatsapp text-white shadow-md hover:brightness-95">
-                <i class="fab fa-whatsapp text-lg"></i> Message Us
-              </a>
+              <span class="text-xs font-bold uppercase tracking-[0.2em]">Contact</span>
             </div>
+            <h2 class="font-display text-3xl font-bold text-ink">Call Us Anytime</h2>
+            <a href="tel:+919030271023" class="group flex items-center gap-4 py-1">
+              <span class="text-3xl font-black tabular-nums text-brand transition-colors group-hover:text-ink lg:text-4xl">+91 90302 71023</span>
+            </a>
+            <p class="font-medium leading-relaxed text-slate-500">
+              Prefer to speak with a professional? Our friendly team is ready to assist you with any questions.
+            </p>
+            <a href="https://wa.me/919030271023" target="_blank" rel="noopener noreferrer"
+              class="mt-auto inline-flex h-14 items-center justify-center gap-3 rounded-xl border border-slate-200 bg-white px-8 text-base font-bold text-ink shadow-sm transition hover:bg-slate-50 active:scale-[0.98]">
+              <i class="fab fa-whatsapp text-lg text-whatsapp" aria-hidden="true"></i> WhatsApp us
+            </a>
           </div>
 
         </div>
@@ -584,12 +590,12 @@
     <section class="section-pad bg-white">
       <div class="container-x">
         <div class="reveal mb-10 max-w-3xl">
-          <p class="eyebrow">Find Us</p>
+          <span class="mb-4 block text-xs font-bold uppercase tracking-[0.2em] text-brand">Find Us</span>
           <h2 class="h-section">Alkapur Township, Manikonda</h2>
           <p class="lede">Parking available on site, with ground-floor access and no stairs to the reception.</p>
         </div>
 
-        <div class="reveal map-frame overflow-hidden rounded-3xl shadow-card">
+        <div class="reveal map-frame overflow-hidden rounded-[2.5rem] border border-slate-200/60 shadow-card">
           <iframe title="Best Dental Clinic location in Manikonda, Hyderabad on Google Maps" width="100%" height="100%"
             style="border:0" loading="lazy" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"
             src="https://www.google.com/maps?q=Alkapur+Township,+Manikonda,+Hyderabad,+Telangana+500089&output=embed"></iframe>
@@ -597,91 +603,59 @@
       </div>
     </section>
 
-    <!-- FAQ -->
-    <section id="faq" class="section-pad bg-surface">
-      <div class="container-x">
-        <div class="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16">
-          <div class="reveal">
-            <p class="eyebrow">Before You Visit</p>
-            <h2 class="h-section">Practical Questions</h2>
-          </div>
-          <div class="reveal space-y-4">
-
-            <div class="faq-item card is-open overflow-hidden">
-              <button type="button" class="faq-trigger flex w-full items-center justify-between gap-4 p-6 text-left"
-                aria-expanded="true">
-                <span class="text-base font-bold text-ink">Do I need an appointment, or can I walk in?</span>
-                <span class="faq-icon flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-surface text-brand">
-                  <i class="fas fa-plus text-xs"></i>
-                </span>
-              </button>
-              <div class="faq-panel">
-                <p class="px-6 pb-6 text-sm leading-relaxed text-slate-600">
-                  Walk-ins are welcome and we will always see genuine emergencies, but booking ahead means far less waiting. Call +91 90302 71023 or use the booking form and we will confirm your slot.
-                </p>
-              </div>
-            </div>
-
-            <div class="faq-item card overflow-hidden">
-              <button type="button" class="faq-trigger flex w-full items-center justify-between gap-4 p-6 text-left"
-                aria-expanded="false">
-                <span class="text-base font-bold text-ink">Where exactly are you located?</span>
-                <span class="faq-icon flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-surface text-brand">
-                  <i class="fas fa-plus text-xs"></i>
-                </span>
-              </button>
-              <div class="faq-panel">
-                <p class="px-6 pb-6 text-sm leading-relaxed text-slate-600">
-                  Alkapur Township, Manikonda, Hyderabad, Telangana 500089. We are a short drive from Manikonda main road, with parking available and ground-floor access.
-                </p>
-              </div>
-            </div>
-
-            <div class="faq-item card overflow-hidden">
-              <button type="button" class="faq-trigger flex w-full items-center justify-between gap-4 p-6 text-left"
-                aria-expanded="false">
-                <span class="text-base font-bold text-ink">Which payment methods do you accept?</span>
-                <span class="faq-icon flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-surface text-brand">
-                  <i class="fas fa-plus text-xs"></i>
-                </span>
-              </button>
-              <div class="faq-panel">
-                <p class="px-6 pb-6 text-sm leading-relaxed text-slate-600">
-                  Cash, all major credit and debit cards, and UPI. No-cost EMI is available on major treatments such as implants, aligners and full mouth rehabilitation — ask at the front desk.
-                </p>
-              </div>
-            </div>
-
-            <div class="faq-item card overflow-hidden">
-              <button type="button" class="faq-trigger flex w-full items-center justify-between gap-4 p-6 text-left"
-                aria-expanded="false">
-                <span class="text-base font-bold text-ink">How quickly do you reply to online enquiries?</span>
-                <span class="faq-icon flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-surface text-brand">
-                  <i class="fas fa-plus text-xs"></i>
-                </span>
-              </button>
-              <div class="faq-panel">
-                <p class="px-6 pb-6 text-sm leading-relaxed text-slate-600">
-                  Within one working day for form and email enquiries. For anything urgent, call +91 90302 71023 during clinic hours rather than waiting on email.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- CTA -->
-    <section class="bg-brand-gradient bg-dot-grid py-14 lg:py-20">
-      <div class="container-x">
-        <div class="reveal flex flex-col items-start gap-8 lg:flex-row lg:items-center lg:justify-between">
-          <div class="max-w-2xl">
-            <h2 class="font-display text-3xl font-bold leading-tight text-white sm:text-4xl">We'd Love to Hear From You</h2>
-            <p class="mt-4 text-base leading-relaxed text-brand-soft">Call, message or walk in. Whichever is easiest — we will make time for you.</p>
-          </div>
-          <div class="flex flex-wrap gap-4">
-            <a href="../book-appointment/index.html" class="btn-gold">Book Appointment</a>
-            <a href="tel:+919030271023" class="btn-ghost-light"><i class="fas fa-phone text-sm"></i> +91 90302 71023</a>
+    <section class="section-pad relative overflow-hidden bg-surface">
+      <div class="container-x relative z-10">
+        <div class="reveal relative overflow-hidden rounded-[2.5rem] bg-ink p-8 shadow-2xl lg:rounded-[3.5rem] lg:p-16">
+          <span aria-hidden="true"
+            class="pointer-events-none absolute -right-20 -top-20 h-96 w-96 rounded-full bg-brand/20 blur-[100px]"></span>
+          <span aria-hidden="true"
+            class="pointer-events-none absolute -bottom-20 -left-20 h-64 w-64 rounded-full bg-brand-soft/10 blur-[100px]"></span>
+
+          <div class="relative z-10 flex flex-col items-center justify-between gap-12 lg:flex-row lg:gap-20">
+            <div class="max-w-3xl text-center lg:text-left">
+              <span class="mb-8 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-6 py-2 text-sm font-bold text-white">
+                Ready for Your Transformation?
+              </span>
+              <h2 class="mb-6 font-display text-2xl font-bold leading-[1.15] text-white sm:text-3xl lg:text-4xl xl:text-[3.5rem]">
+                Book your <span class="italic">consultation</span> today
+              </h2>
+              <p class="mx-auto max-w-xl text-base leading-relaxed text-slate-400 lg:mx-0 lg:text-xl">
+                Get treated by experienced dentists in Manikonda with advanced and painless dental care.
+              </p>
+
+              <div class="mt-12 hidden flex-wrap justify-start gap-12 lg:flex">
+                <div class="flex items-start gap-3">
+                  <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-white/10 bg-white/5 text-brand-soft">
+                    <i class="fas fa-phone text-sm" aria-hidden="true"></i>
+                  </span>
+                  <span class="flex flex-col">
+                    <a href="tel:+919030271023" class="text-lg font-bold leading-tight text-white transition hover:text-brand-soft">+91 90302 71023</a>
+                    <a href="tel:+917416860888" class="mt-1 text-lg font-bold leading-tight text-white transition hover:text-brand-soft">+91 74168 60888</a>
+                  </span>
+                </div>
+                <div class="flex items-start gap-3">
+                  <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-white/10 bg-white/5 text-brand-soft">
+                    <i class="fas fa-clock text-sm" aria-hidden="true"></i>
+                  </span>
+                  <span class="flex flex-col">
+                    <span class="text-base font-bold leading-tight text-white">Mon &ndash; Sat: 10AM &ndash; 2PM, 4PM &ndash; 8PM</span>
+                    <span class="mt-1 text-base font-bold leading-tight text-white">Sun: 10AM &ndash; 1PM</span>
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <div class="flex w-full shrink-0 flex-col items-center gap-6 sm:w-auto">
+              <a href="../book-appointment/index.html"
+                class="inline-flex h-14 w-full max-w-md items-center justify-center gap-3 rounded-xl bg-brand px-6 text-base font-bold text-white shadow-xl shadow-brand transition hover:bg-brand-mid active:scale-[0.98] sm:min-w-[320px] lg:h-16 lg:px-10 lg:text-xl">
+                Book Consultation <i class="fas fa-arrow-right text-sm" aria-hidden="true"></i>
+              </a>
+              <a href="https://wa.me/919030271023" target="_blank" rel="noopener noreferrer"
+                class="inline-flex h-14 w-full max-w-md items-center justify-center gap-3 rounded-xl border border-slate-200 bg-white px-6 text-base font-bold text-ink shadow-sm transition hover:bg-slate-50 active:scale-[0.98] sm:min-w-[320px] lg:h-16 lg:px-10 lg:text-xl">
+                <i class="fab fa-whatsapp text-xl text-whatsapp" aria-hidden="true"></i> WhatsApp us
+              </a>
+            </div>
           </div>
         </div>
       </div>
