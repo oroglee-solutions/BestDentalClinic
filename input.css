@@ -36,6 +36,40 @@
 }
 
 /* ==============================================================
+   SEMANTIC DESIGN TOKENS
+   These are the exact values read off the reference site's compiled
+   stylesheet, kept under conventional names so the palette can be
+   retuned from one place. The @theme block above exposes the same
+   colours as Tailwind utilities; these are for hand-written CSS.
+   ============================================================== */
+:root {
+  --primary: #1a4996;
+  --primary-dark: #030a14;
+  --secondary: #0f172a; /* heading text + dark CTA panel */
+  --accent: #38bdf8;
+  --background: #f0f7ff; /* tinted page/section background */
+  --foreground: #1e293b; /* body text */
+  --muted: #f1f5f9;
+  --muted-foreground: #64748b; /* secondary body text */
+  --border: #e2e8f0;
+  --surface: #ffffff; /* card background */
+
+  /* Signature button gradient, left to right */
+  --grad-cta: linear-gradient(to right, #030a14, #1a4996);
+  /* Hero band, top to bottom */
+  --grad-hero: linear-gradient(180deg, #eef5ff 0%, #fefeff 51%, #eef5ff 95%);
+
+  /* Elevation */
+  --shadow-premium: 0 10px 40px -10px rgba(26, 73, 150, 0.15);
+  --shadow-soft: 0 4px 20px -2px rgba(15, 23, 42, 0.05);
+
+  /* Layout */
+  --container-max: 80rem; /* 1280px */
+  --radius-card: 1.5rem; /* 24px */
+  --nav-h: 4rem; /* 64px, 80px from sm up */
+}
+
+/* ==============================================================
    BASE
    ============================================================== */
 @layer base {
@@ -95,27 +129,43 @@
     @apply py-14 sm:py-20 lg:py-24;
   }
 
-  /* ---- Section headings ---- */
-  .eyebrow {
-    @apply mb-3 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.18em] text-brand sm:text-sm;
+  /* ---- Section headings ----
+     Two eyebrow treatments, matching the reference: a solid navy pill
+     for feature sections, and plain letter-spaced caps elsewhere. */
+  .pill-badge {
+    @apply mb-5 inline-flex items-center gap-2 rounded-full bg-brand-dark px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.16em] text-white;
   }
 
-  .eyebrow::before {
-    content: "";
-    @apply inline-block h-1 w-7 rounded-full bg-gold;
+  .pill-badge-light {
+    @apply mb-5 inline-flex items-center gap-2 rounded-full border border-brand-soft/50 bg-white px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.14em] text-brand shadow-sm;
+  }
+
+  .eyebrow {
+    @apply mb-3 block text-[11px] font-bold uppercase tracking-[0.22em] text-brand sm:text-xs;
   }
 
   .h-section {
-    @apply font-display text-3xl font-bold leading-tight text-ink sm:text-4xl lg:text-[2.75rem];
+    @apply text-3xl font-bold leading-[1.15] tracking-tight text-ink sm:text-4xl lg:text-[2.6rem];
+  }
+
+  /* The italic serif phrase inside a heading — "Your Perfect Smile" */
+  .accent {
+    @apply font-display italic font-semibold text-brand;
   }
 
   .lede {
-    @apply mt-4 max-w-2xl text-base leading-relaxed text-slate-600 sm:text-lg;
+    @apply mt-4 max-w-2xl text-base leading-relaxed text-slate-600;
   }
 
-  /* ---- Buttons ---- */
+  /* ---- Buttons ----
+     The reference design leads with the deep navy fill, not the mid
+     blue — brand blue is reserved for secondary actions and links. */
   .btn-primary {
-    @apply btn bg-brand text-white shadow-brand hover:-translate-y-0.5 hover:bg-brand-mid;
+    @apply btn bg-brand-dark text-white shadow-brand hover:-translate-y-0.5 hover:bg-brand;
+  }
+
+  .btn-brand {
+    @apply btn bg-brand text-white shadow-brand hover:-translate-y-0.5 hover:bg-brand-dark;
   }
 
   .btn-gold {
@@ -123,11 +173,19 @@
   }
 
   .btn-outline {
-    @apply btn border-2 border-brand bg-transparent text-brand hover:bg-brand hover:text-white;
+    @apply btn border-2 border-brand-dark bg-transparent text-brand-dark hover:bg-brand-dark hover:text-white;
+  }
+
+  .btn-white {
+    @apply btn bg-white text-brand-dark shadow-md hover:-translate-y-0.5 hover:bg-surface;
   }
 
   .btn-ghost-light {
-    @apply btn border-2 border-white/70 bg-transparent text-white hover:bg-white hover:text-brand;
+    @apply btn border-2 border-white/70 bg-transparent text-white hover:bg-white hover:text-brand-dark;
+  }
+
+  .btn-whatsapp {
+    @apply btn bg-whatsapp text-white shadow-md hover:-translate-y-0.5 hover:brightness-95;
   }
 
   /* ---- Cards ---- */
@@ -408,6 +466,565 @@
 }
 
 /* ==============================================================
+   REFERENCE LAYOUT PRIMITIVES
+   Mirrors the reference site's own component classes so section
+   rhythm, container width and card geometry match exactly.
+   ============================================================== */
+
+/* max-width 1280px, 1rem gutter growing to 1.5rem at 640px */
+.container-custom {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: 1rem;
+}
+
+@media (min-width: 40rem) {
+  .container-custom {
+    padding-inline: 1.5rem;
+  }
+}
+
+/* 1.5rem block padding, doubling to 3rem at 1024px */
+.section-padding {
+  position: relative;
+  padding-inline: 1.5rem;
+  padding-block: 1.5rem;
+}
+
+@media (min-width: 64rem) {
+  .section-padding {
+    padding-inline: 3rem;
+    padding-block: 3rem;
+  }
+}
+
+/* H1: 24 → 36 → 48 → 52px, extrabold, tight leading */
+.heading-hero {
+  margin-bottom: 0.5rem;
+  font-size: 1.5rem;
+  line-height: 1.2;
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  color: #1a3a6b;
+}
+
+@media (min-width: 40rem) {
+  .heading-hero {
+    margin-bottom: 1.25rem;
+    font-size: 2.25rem;
+  }
+}
+
+@media (min-width: 64rem) {
+  .heading-hero {
+    font-size: 3rem;
+  }
+}
+
+@media (min-width: 80rem) {
+  .heading-hero {
+    font-size: 3.25rem;
+  }
+}
+
+/* H2: 20 → 24 → 40px, bold, leading 1.2 */
+.heading-section {
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+  line-height: 1.2;
+  font-weight: 700;
+  color: var(--secondary);
+}
+
+@media (min-width: 40rem) {
+  .heading-section {
+    font-size: 1.5rem;
+  }
+}
+
+@media (min-width: 64rem) {
+  .heading-section {
+    font-size: 2.5rem;
+  }
+}
+
+/* Body copy: 14 → 16 → 17px, relaxed, muted */
+.text-body {
+  font-size: 0.875rem;
+  line-height: 1.625;
+  color: var(--muted-foreground);
+}
+
+@media (min-width: 40rem) {
+  .text-body {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 64rem) {
+  .text-body {
+    font-size: 1.0625rem;
+  }
+}
+
+/* Smaller body copy: 12 → 14px, relaxed, muted. Used in the sticky
+   booking card on treatment pages. */
+.text-body-small {
+  font-size: 0.75rem;
+  line-height: 1.625;
+  color: var(--muted-foreground);
+}
+
+@media (min-width: 40rem) {
+  .text-body-small {
+    font-size: 0.875rem;
+  }
+}
+
+/* White card, 24px radius, hairline border, soft shadow */
+.premium-card {
+  background-color: var(--surface);
+  border: 1px solid color-mix(in oklab, var(--border) 40%, transparent);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-soft);
+  transition: all 0.3s ease;
+}
+
+.premium-card:hover {
+  box-shadow: 0 18px 44px -12px rgba(26, 73, 150, 0.22);
+}
+
+.shadow-premium {
+  box-shadow: var(--shadow-premium);
+}
+
+/* Heading phrase that fades primary → near-black, used italic */
+.gradient-text {
+  background-image: linear-gradient(to right, var(--primary), var(--primary-dark));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* ---- Signature CTA button ----
+   Square except for a single 24px top-right corner. This asymmetry
+   is the reference's most distinctive control, so it is reproduced
+   exactly rather than rounded off. */
+.btn-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.875rem 2rem;
+  font-size: 15px;
+  font-weight: 600;
+  color: #ffffff;
+  background-image: var(--grad-cta);
+  border-radius: 0 24px 0 0;
+  transition: all 0.3s ease;
+}
+
+.btn-cta:hover {
+  filter: brightness(1.12);
+  box-shadow: var(--shadow-premium);
+}
+
+.btn-cta:active {
+  transform: scale(0.98);
+}
+
+/* Rounded pill variant used in the navbar */
+.btn-nav {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #ffffff;
+  background-image: var(--grad-cta);
+  border-radius: 0.75rem;
+  box-shadow: var(--shadow-premium);
+  transition: all 0.3s ease;
+}
+
+.btn-nav:hover {
+  filter: brightness(1.1);
+  box-shadow: 0 18px 44px -12px rgba(26, 73, 150, 0.35);
+}
+
+/* Small uppercase gradient chip above section headings */
+.badge-gradient {
+  display: inline-block;
+  margin-bottom: 1rem;
+  padding: 0.375rem 1rem;
+  border-radius: 9999px;
+  background-image: var(--grad-cta);
+  color: #ffffff;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  box-shadow: var(--shadow-premium);
+}
+
+@media (min-width: 40rem) {
+  .badge-gradient {
+    font-size: 0.75rem;
+  }
+}
+
+/* ==============================================================
+   ABOUT PAGE PRIMITIVES
+   The About page runs a slightly different heading scale to the
+   home page (24 → 30 → 36px rather than 20 → 24 → 40px), so it
+   gets its own class instead of overloading .heading-section.
+   ============================================================== */
+.heading-about {
+  font-size: 1.5rem;
+  line-height: 1.25;
+  font-weight: 700;
+  color: var(--secondary);
+}
+
+@media (min-width: 40rem) {
+  .heading-about {
+    font-size: 1.875rem;
+  }
+}
+
+@media (min-width: 64rem) {
+  .heading-about {
+    font-size: 2.25rem;
+  }
+}
+
+/* Eyebrow with a short primary rule before the label */
+.eyebrow-rule {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--primary);
+}
+
+.eyebrow-rule::before {
+  content: "";
+  display: inline-block;
+  width: 2.5rem;
+  height: 2px;
+  background-color: var(--primary);
+}
+
+/* Eyebrow with a leading icon instead of a rule */
+.eyebrow-icon {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--primary);
+}
+
+/* Mission / vision panel: pale blue diagonal wash, 24px radius */
+.mv-card {
+  height: 100%;
+  padding: 2rem;
+  border-radius: 1.5rem;
+  background-image: linear-gradient(to bottom right, #eef5ff, #fefeff);
+  border: 1px solid color-mix(in oklab, var(--primary) 10%, transparent);
+  box-shadow: var(--shadow-soft);
+}
+
+@media (min-width: 64rem) {
+  .mv-card {
+    padding: 2.25rem;
+  }
+}
+
+/* Why-choose tile: navy diagonal gradient, lifts slightly on hover */
+.trust-tile {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  background-image: linear-gradient(to bottom right, #030a14, #1a4996);
+  box-shadow: var(--shadow-premium);
+  transition: all 0.3s ease;
+}
+
+.trust-tile:hover {
+  transform: scale(1.02);
+}
+
+/* Larger solid CTA used in the dentist section */
+.btn-solid-lg {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #ffffff;
+  background-image: var(--grad-cta);
+  border-radius: 0.75rem;
+  box-shadow: var(--shadow-premium);
+  transition: all 0.3s ease;
+}
+
+.btn-solid-lg:hover {
+  filter: brightness(1.1);
+}
+
+.btn-solid-lg:active {
+  transform: scale(0.98);
+}
+
+/* Desktop nav link: 15px bold, full-height hit area */
+.nav-link-ref {
+  padding-block: 2rem;
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: var(--secondary);
+  transition: all 0.3s ease;
+}
+
+.nav-link-ref:hover,
+.nav-link-ref[aria-current="page"] {
+  color: var(--primary);
+}
+
+/* Plain uppercase eyebrow used on the other sections */
+.eyebrow-caps {
+  display: block;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--secondary);
+}
+
+/* ==============================================================
+   SERVICE CARD
+   Photo on top at a 16:11 crop, navy gradient text panel below.
+   ============================================================== */
+.svc-media {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+}
+
+@media (min-width: 40rem) {
+  .svc-media {
+    aspect-ratio: 16 / 11;
+  }
+}
+
+.svc-media img {
+  position: absolute;
+  inset: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: top;
+  transition: transform 0.7s ease;
+}
+
+.svc-card:hover .svc-media img {
+  transform: scale(1.06);
+}
+
+.svc-body {
+  background-image: var(--grad-cta);
+  color: #ffffff;
+}
+
+/* ==============================================================
+   REVIEWS MARQUEE
+   The reference scrolls reviews continuously and pauses on hover,
+   with a fade mask at each edge. Duplicated in markup so the loop
+   is seamless at -50%.
+   ============================================================== */
+.marquee-mask-left,
+.marquee-mask-right {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 2rem;
+  z-index: 10;
+  pointer-events: none;
+}
+
+@media (min-width: 48rem) {
+  .marquee-mask-left,
+  .marquee-mask-right {
+    width: 6rem;
+  }
+}
+
+.marquee-mask-left {
+  left: 0;
+  background: linear-gradient(to right, var(--background), transparent);
+}
+
+.marquee-mask-right {
+  right: 0;
+  background: linear-gradient(to left, var(--background), transparent);
+}
+
+.review-card {
+  width: 300px;
+  flex-shrink: 0;
+}
+
+@media (min-width: 48rem) {
+  .review-card {
+    width: 400px;
+  }
+}
+
+@media (min-width: 64rem) {
+  .review-card {
+    width: 450px;
+  }
+}
+
+/* ==============================================================
+   HERO — the decorative navy arc behind the photograph.
+   Two solid circles rather than a blur, so it stays crisp the way
+   the reference does. Hidden below lg where the image goes full
+   width and the shapes would just crowd it.
+   ============================================================== */
+.hero-arc {
+  position: absolute;
+  border-radius: 9999px;
+  pointer-events: none;
+}
+
+.hero-arc-navy {
+  width: 30rem;
+  height: 30rem;
+  right: -6rem;
+  top: -4rem;
+  background: linear-gradient(140deg, #1a4996 0%, #0a1d3d 100%);
+}
+
+.hero-arc-soft {
+  width: 13rem;
+  height: 13rem;
+  right: 12rem;
+  bottom: -3rem;
+  background: rgba(144, 180, 231, 0.35);
+}
+
+/* ==============================================================
+   IMAGE VEIL — navy gradient scrim laid over a full-bleed photo so
+   white text stays legible. Used by the gallery cards.
+   ============================================================== */
+.svc-veil {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    #0a1a35 0%,
+    rgba(10, 29, 61, 0.94) 34%,
+    rgba(10, 29, 61, 0.55) 56%,
+    rgba(10, 29, 61, 0.12) 78%,
+    rgba(10, 29, 61, 0.05) 100%
+  );
+}
+
+/* ==============================================================
+   CLINICAL INSIGHTS — horizontally scrolling video-style cards
+   ============================================================== */
+.insight-track {
+  display: flex;
+  gap: 1.25rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 0.5rem;
+}
+
+.insight-card {
+  flex: 0 0 76%;
+  scroll-snap-align: start;
+}
+
+@media (min-width: 640px) {
+  .insight-card {
+    flex: 0 0 42%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .insight-card {
+    flex: 0 0 23%;
+  }
+}
+
+.insight-frame {
+  position: relative;
+  height: 19rem;
+  overflow: hidden;
+  border-radius: 1rem;
+  background: #030a14;
+}
+
+.insight-frame img {
+  opacity: 0.55;
+  transition:
+    opacity 0.4s ease,
+    transform 0.6s ease;
+}
+
+.insight-card:hover .insight-frame img {
+  opacity: 0.7;
+  transform: scale(1.05);
+}
+
+.play-button {
+  transition:
+    transform 0.3s ease,
+    background-color 0.3s ease;
+}
+
+.insight-card:hover .play-button {
+  transform: scale(1.12);
+  background-color: #ffffff;
+  color: #0a1d3d;
+}
+
+/* ==============================================================
+   GALLERY — treatment cards with a corner category chip
+   ============================================================== */
+.gallery-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1rem;
+  height: 17rem;
+}
+
+.gallery-card img {
+  transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.gallery-card:hover img {
+  transform: scale(1.06);
+}
+
+/* ==============================================================
    MEDIA FRAMES
    Fixed heights keep cards aligned regardless of source aspect
    ratio, and grow on wider breakpoints where cards get wider.
@@ -502,6 +1119,43 @@ select.field {
   top: 50%;
   transform: translateY(-50%);
   pointer-events: none;
+}
+
+/* ==============================================================
+   BOOKING PAGE
+   The reference booking CTA fades from the near-black --secondary
+   to --primary on hover; neither is exposed as a Tailwind colour
+   here, so it gets a component class rather than utilities.
+   ============================================================== */
+.btn-book {
+  display: inline-flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding-block: 1rem;
+  border-radius: 0.75rem;
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #ffffff;
+  background-color: var(--secondary);
+  box-shadow: 0 20px 25px -5px rgba(15, 23, 42, 0.1);
+  transition: all 0.3s ease;
+}
+
+.btn-book:hover {
+  background-color: var(--primary);
+}
+
+.btn-book:active {
+  transform: scale(0.98);
+}
+
+/* script.js appends .form-notice as the form's last child. The booking
+   form is a two-column grid, so the notice must span both columns
+   instead of sitting in a half-width cell. */
+.form-notice {
+  grid-column: 1 / -1;
 }
 
 /* ==============================================================

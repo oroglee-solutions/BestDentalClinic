@@ -350,6 +350,13 @@
 
     appointmentForm.addEventListener("submit", function (e) {
       e.preventDefault();
+
+      // The form carries novalidate so the browser does not block
+      // submission, which means the required/pattern rules only apply
+      // if we ask for them. Without this an empty form still opened
+      // WhatsApp with every field filled in as "-".
+      if (!appointmentForm.reportValidity()) return;
+
       sendToWhatsApp();
       showFormNotice(
         appointmentForm,

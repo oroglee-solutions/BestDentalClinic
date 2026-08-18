@@ -32,7 +32,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="../../output.css">
@@ -145,144 +145,136 @@
   </script>
 </head>
 
-<body class="bg-white antialiased">
+<body class="antialiased" style="background-color: var(--surface);">
 
   <a href="#main"
     class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-lg focus:bg-brand focus:px-4 focus:py-2 focus:text-white">Skip
     to content</a>
 
   <!-- ============================================================
-       TOP UTILITY BAR
+       NAVBAR — fixed, 64px tall growing to 80px at 640px.
        ============================================================ -->
-  <div class="hidden bg-brand-deep text-white lg:block">
-    <div class="container-x flex items-center justify-between py-2.5 text-xs">
-      <p class="flex items-center gap-2 text-slate-300">
-        <i class="fas fa-clock text-gold"></i>
-        Mon–Sat: 10:00 AM – 2:00 PM &amp; 4:00 PM – 8:00 PM · Sun: 10:00 AM – 1:00 PM
-      </p>
-      <div class="flex items-center gap-6">
-        <a href="mailto:bestdentalclinic@gmail.com" class="flex items-center gap-2 text-slate-300 transition hover:text-gold">
-          <i class="fas fa-envelope text-gold"></i>bestdentalclinic@gmail.com
-        </a>
-        <a href="tel:+919030271023" class="flex items-center gap-2 font-semibold transition hover:text-gold">
-          <i class="fas fa-phone text-gold"></i>+91 90302 71023
-        </a>
-      </div>
-    </div>
-  </div>
+  <nav class="site-nav fixed left-0 right-0 top-0 z-50 border-b bg-white/95 shadow-sm backdrop-blur-md"
+    style="border-color: color-mix(in oklab, var(--border) 40%, transparent);">
+    <div class="container-custom flex h-16 items-center justify-between px-6 sm:h-20">
 
-  <!-- ============================================================
-       NAVBAR
-       ============================================================ -->
-  <nav class="site-nav sticky top-0 z-50 border-b border-slate-100 bg-white/95 backdrop-blur">
-    <div class="container-x">
-      <div class="flex h-[72px] items-center justify-between lg:h-20">
+      <!-- IMAGE PLACEHOLDER: replace with your logo -->
+      <a href="../../index.html" class="flex items-center gap-2.5" aria-label="Best Dental Clinic — home">
+        <span class="flex h-9 w-9 items-center justify-center rounded-xl text-white sm:h-11 sm:w-11"
+          style="background-image: var(--grad-cta);">
+          <i class="fas fa-tooth text-base sm:text-lg"></i>
+        </span>
+        <span class="leading-tight">
+          <span class="block text-[15px] font-extrabold sm:text-lg" style="color: var(--secondary);">Best Dental
+            Clinic</span>
+          <span class="block text-[8px] font-semibold uppercase tracking-[0.2em] sm:text-[9px]"
+            style="color: var(--muted-foreground);">Manikonda · Hyderabad</span>
+        </span>
+      </a>
 
-        <a href="../../index.html" class="flex items-center gap-3" aria-label="Best Dental Clinic — home">
-          <span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-brand text-white shadow-brand">
-            <i class="fas fa-tooth text-xl"></i>
-          </span>
-          <span class="leading-tight">
-            <span class="block font-display text-lg font-bold text-brand sm:text-xl">Best Dental Clinic</span>
-            <span class="block text-[10px] font-medium uppercase tracking-[0.18em] text-slate-500">Manikonda ·
-              Hyderabad</span>
-          </span>
-        </a>
+      <div class="hidden items-center gap-8 lg:flex">
+        <a href="../../index.html" class="nav-link-ref">Home</a>
+        <a href="../../about-us/index.html" class="nav-link-ref">About Us</a>
 
-        <div class="hidden items-center gap-7 lg:flex">
-          <a href="../../index.html" class="nav-link">Home</a>
-          <a href="../../about-us/index.html" class="nav-link">About Us</a>
-
-          <div class="dropdown relative">
-            <a href="../../services/index.html" class="nav-link flex items-center gap-1.5" aria-current="page">
-              Services <i class="fas fa-chevron-down text-[10px]"></i>
-            </a>
-            <div class="dropdown-panel">
-              <div class="grid grid-cols-2 gap-1">
-                <a href="../../services/invisible-aligners-braces/index.html" class="dropdown-item">
-                  <i class="fas fa-teeth-open mt-0.5 w-5 text-center text-brand"></i>
-                  <span>
-                    <span class="block text-sm font-semibold text-ink">Invisible Aligners &amp; Braces</span>
-                    <span class="block text-xs text-slate-500">Straighten teeth discreetly</span>
-                  </span>
-                </a>
-                <a href="../../services/dental-implants/index.html" class="dropdown-item">
-                  <i class="fas fa-screwdriver-wrench mt-0.5 w-5 text-center text-brand"></i>
-                  <span>
-                    <span class="block text-sm font-semibold text-ink">Dental Implants</span>
-                    <span class="block text-xs text-slate-500">Permanent tooth replacement</span>
-                  </span>
-                </a>
-                <a href="../../services/crowns-bridges/index.html" class="dropdown-item">
-                  <i class="fas fa-crown mt-0.5 w-5 text-center text-brand"></i>
-                  <span>
-                    <span class="block text-sm font-semibold text-ink">Crowns &amp; Bridges</span>
-                    <span class="block text-xs text-slate-500">Restore damaged teeth</span>
-                  </span>
-                </a>
-                <a href="../../services/pediatric-dentistry/index.html" class="dropdown-item">
-                  <i class="fas fa-child mt-0.5 w-5 text-center text-brand"></i>
-                  <span>
-                    <span class="block text-sm font-semibold text-ink">Pediatric Dentistry</span>
-                    <span class="block text-xs text-slate-500">Gentle care for children</span>
-                  </span>
-                </a>
-                <a href="../../services/emergency-dental-care/index.html" class="dropdown-item">
-                  <i class="fas fa-kit-medical mt-0.5 w-5 text-center text-brand"></i>
-                  <span>
-                    <span class="block text-sm font-semibold text-ink">Emergency Dental Care</span>
-                    <span class="block text-xs text-slate-500">Urgent same-day relief</span>
-                  </span>
-                </a>
-                <a href="../../services/cosmetic-dentistry/index.html" class="dropdown-item">
-                  <i class="fas fa-wand-magic-sparkles mt-0.5 w-5 text-center text-brand"></i>
-                  <span>
-                    <span class="block text-sm font-semibold text-ink">Cosmetic Dentistry</span>
-                    <span class="block text-xs text-slate-500">Veneers &amp; smile design</span>
-                  </span>
-                </a>
-                <a href="../../services/teeth-cleaning-whitening/index.html" class="dropdown-item">
-                  <i class="fas fa-sparkles mt-0.5 w-5 text-center text-brand"></i>
-                  <span>
-                    <span class="block text-sm font-semibold text-ink">Teeth Cleaning &amp; Whitening</span>
-                    <span class="block text-xs text-slate-500">Professional scaling</span>
-                  </span>
-                </a>
-                <a href="../../services/index.html" class="dropdown-item bg-surface/60 font-semibold text-brand">
-                  <i class="fas fa-arrow-right mt-0.5 w-5 text-center"></i>
-                  <span class="text-sm">View all services</span>
-                </a>
-              </div>
+        <div class="dropdown relative">
+          <a href="../../services/index.html" class="nav-link-ref flex items-center gap-1.5" aria-current="page">
+            Services <i class="fas fa-chevron-down text-[10px]"></i>
+          </a>
+          <div class="dropdown-panel">
+            <div class="grid grid-cols-2 gap-1">
+              <a href="../../services/invisible-aligners-braces/index.html" class="dropdown-item">
+                <i class="fas fa-teeth-open mt-0.5 w-5 text-center text-brand"></i>
+                <span>
+                  <span class="block text-sm font-semibold" style="color: var(--secondary);">Invisible Aligners &amp; Braces</span>
+                  <span class="block text-xs" style="color: var(--muted-foreground);">Straighten teeth discreetly</span>
+                </span>
+              </a>
+              <a href="../../services/dental-implants/index.html" class="dropdown-item">
+                <i class="fas fa-screwdriver-wrench mt-0.5 w-5 text-center text-brand"></i>
+                <span>
+                  <span class="block text-sm font-semibold" style="color: var(--secondary);">Dental Implants</span>
+                  <span class="block text-xs" style="color: var(--muted-foreground);">Permanent tooth replacement</span>
+                </span>
+              </a>
+              <a href="../../services/crowns-bridges/index.html" class="dropdown-item">
+                <i class="fas fa-crown mt-0.5 w-5 text-center text-brand"></i>
+                <span>
+                  <span class="block text-sm font-semibold" style="color: var(--secondary);">Crowns &amp; Bridges</span>
+                  <span class="block text-xs" style="color: var(--muted-foreground);">Restore damaged teeth</span>
+                </span>
+              </a>
+              <a href="../../services/pediatric-dentistry/index.html" class="dropdown-item">
+                <i class="fas fa-child mt-0.5 w-5 text-center text-brand"></i>
+                <span>
+                  <span class="block text-sm font-semibold" style="color: var(--secondary);">Pediatric Dentistry</span>
+                  <span class="block text-xs" style="color: var(--muted-foreground);">Gentle care for children</span>
+                </span>
+              </a>
+              <a href="../../services/emergency-dental-care/index.html" class="dropdown-item">
+                <i class="fas fa-kit-medical mt-0.5 w-5 text-center text-brand"></i>
+                <span>
+                  <span class="block text-sm font-semibold" style="color: var(--secondary);">Emergency Dental Care</span>
+                  <span class="block text-xs" style="color: var(--muted-foreground);">Urgent same-day relief</span>
+                </span>
+              </a>
+              <a href="../../services/cosmetic-dentistry/index.html" class="dropdown-item">
+                <i class="fas fa-wand-magic-sparkles mt-0.5 w-5 text-center text-brand"></i>
+                <span>
+                  <span class="block text-sm font-semibold" style="color: var(--secondary);">Cosmetic Dentistry</span>
+                  <span class="block text-xs" style="color: var(--muted-foreground);">Veneers &amp; smile design</span>
+                </span>
+              </a>
+              <a href="../../services/teeth-cleaning-whitening/index.html" class="dropdown-item">
+                <i class="fas fa-sparkles mt-0.5 w-5 text-center text-brand"></i>
+                <span>
+                  <span class="block text-sm font-semibold" style="color: var(--secondary);">Teeth Cleaning &amp; Whitening</span>
+                  <span class="block text-xs" style="color: var(--muted-foreground);">Professional scaling</span>
+                </span>
+              </a>
+              <a href="../../services/index.html" class="dropdown-item bg-surface/60 font-semibold text-brand">
+                <i class="fas fa-arrow-right mt-0.5 w-5 text-center"></i>
+                <span class="text-sm">View all services</span>
+              </a>
             </div>
           </div>
-
-          <a href="../../blogs/index.html" class="nav-link">Blogs</a>
-          <a href="../../cases/index.html" class="nav-link">Cases</a>
-          <a href="../../contact-us/index.html" class="nav-link">Contact Us</a>
-
-          <a href="../../book-appointment/index.html" class="btn-primary !px-6 !py-2.5 !text-sm">
-            Book Now <i class="fas fa-arrow-right text-xs"></i>
-          </a>
         </div>
 
-        <div class="flex items-center gap-2 lg:hidden">
-          <a href="tel:+919030271023"
-            class="flex h-10 w-10 items-center justify-center rounded-full bg-surface text-brand"
-            aria-label="Call Best Dental Clinic">
-            <i class="fas fa-phone"></i>
-          </a>
-          <button id="mobile-menu-button" type="button"
-            class="flex h-10 w-10 items-center justify-center rounded-full bg-brand text-white" aria-expanded="false"
-            aria-controls="mobile-menu" aria-label="Open menu">
-            <i class="fas fa-bars text-xl"></i>
-          </button>
-        </div>
-
+        <a href="../../blogs/index.html" class="nav-link-ref">Blogs</a>
+        <a href="../../cases/index.html" class="nav-link-ref">Cases</a>
+        <a href="../../contact-us/index.html" class="nav-link-ref">Contact Us</a>
       </div>
+
+      <div class="hidden items-center gap-5 lg:flex">
+        <div class="flex flex-col gap-0.5">
+          <a href="tel:+919030271023" class="flex items-center gap-2 text-sm font-semibold transition hover:text-brand"
+            style="color: var(--secondary);">
+            <i class="fas fa-phone text-[11px] text-brand"></i><span>+91 90302 71023</span>
+          </a>
+          <a href="tel:+917416860888" class="flex items-center gap-2 text-sm font-semibold transition hover:text-brand"
+            style="color: var(--secondary);">
+            <i class="fas fa-phone text-[11px] text-brand"></i><span>+91 74168 60888</span>
+          </a>
+        </div>
+        <a href="../../book-appointment/index.html" class="btn-nav">
+          <i class="fas fa-calendar-check text-sm"></i> Book Now
+        </a>
+      </div>
+
+      <div class="flex items-center gap-2 lg:hidden">
+        <a href="tel:+919030271023" class="flex h-10 w-10 items-center justify-center rounded-full bg-surface text-brand"
+          aria-label="Call Best Dental Clinic">
+          <i class="fas fa-phone"></i>
+        </a>
+        <button id="mobile-menu-button" type="button" class="text-2xl" style="color: var(--secondary);"
+          aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
+          <i class="fas fa-bars text-xl"></i>
+        </button>
+      </div>
+
     </div>
 
     <div id="mobile-menu" class="hidden border-t border-slate-100 bg-white lg:hidden">
-      <div class="container-x space-y-1 py-5">
+      <div class="container-custom space-y-1 py-5">
         <a href="../../index.html" class="mobile-link">Home</a>
         <a href="../../about-us/index.html" class="mobile-link">About Us</a>
 
@@ -307,160 +299,251 @@
         <a href="../../cases/index.html" class="mobile-link">Cases</a>
         <a href="../../contact-us/index.html" class="mobile-link">Contact Us</a>
 
-        <a href="../../book-appointment/index.html" class="btn-primary mt-4 w-full">Book Appointment</a>
+        <div class="mt-4 flex flex-col gap-1 rounded-xl px-4 py-3 text-sm font-semibold"
+          style="background-color: var(--background); color: var(--secondary);">
+          <a href="tel:+919030271023" class="flex items-center gap-2"><i class="fas fa-phone text-xs text-brand"></i>+91
+            90302 71023</a>
+          <a href="tel:+917416860888" class="flex items-center gap-2"><i class="fas fa-phone text-xs text-brand"></i>+91
+            74168 60888</a>
+        </div>
+
+        <a href="../../book-appointment/index.html" class="btn-nav mt-3 w-full">Book Now</a>
       </div>
     </div>
   </nav>
 
+  <!-- Fixed navbar needs matching top offset -->
+  <div class="h-16 sm:h-20" aria-hidden="true"></div>
+
   <main id="main">
 
+    <!-- ============================================================
+         HERO
+         Reference treatment-page hero: pale #EEF5FF → #FEFEFF band,
+         min-height 420px from 640px up, cut-out photo on the right
+         half, copy over the left 55%/65%. The breadcrumb is an
+         addition to the reference, kept for navigation and SEO.
+         ============================================================ -->
+    <section class="relative h-auto w-full overflow-hidden max-sm:pb-6 sm:min-h-[420px]"
+      style="background: var(--grad-hero);">
+      <div class="relative h-full w-full">
 
-    <!-- PAGE HERO -->
-    <section class="relative overflow-hidden bg-brand-gradient bg-dot-grid py-14 lg:py-20">
-      <div class="container-x relative">
-        <nav aria-label="Breadcrumb" class="mb-5">
-          <ol class="flex flex-wrap items-center gap-2 text-xs text-brand-soft">
-            <li><a href="../../index.html" class="transition hover:text-gold">Home</a></li>
-            <li aria-hidden="true"><i class="fas fa-chevron-right text-[8px]"></i></li>
-            <li><a href="../../services/index.html" class="transition hover:text-gold">Services</a></li>
-            <li aria-hidden="true"><i class="fas fa-chevron-right text-[8px]"></i></li>
-            <li class="font-semibold text-white" aria-current="page">Invisible Aligners &amp; Braces</li>
-          </ol>
-        </nav>
-
-        <h1 class="max-w-3xl font-display text-4xl font-bold leading-tight text-white sm:text-5xl lg:text-[3.25rem]">
-          Invisible Aligners &amp; Braces in Manikonda
-        </h1>
-        <p class="mt-5 max-w-2xl text-base leading-relaxed text-brand-soft sm:text-lg">
-          Clear, removable aligners and modern braces to straighten teeth comfortably.
-        </p>
-
-        <div class="mt-8 flex flex-wrap gap-4">
-          <a href="../../book-appointment/index.html" class="btn-gold">Book Appointment</a>
-          <a href="../../contact-us/index.html" class="btn-ghost-light">Free Consultation</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- OVERVIEW -->
-    <section class="section-pad bg-white">
-      <div class="container-x">
-        <div class="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
-          <div class="reveal">
-            <p class="eyebrow">Treatment Overview</p>
-            <h2 class="h-section">What Invisible Aligners &amp; Braces Involves</h2>
-            <p class="lede">Crowded, gapped or protruding teeth are harder to clean, wear unevenly and often make people hide their smile. Orthodontic treatment fixes the position of the teeth themselves, which fixes both problems at once.</p>
-            <p class="mt-4 text-base leading-relaxed text-slate-600">We offer clear removable aligners as well as metal, ceramic and self-ligating braces. Which one suits you depends on how much movement is needed, how fast you want results, and how visible you're willing for the appliance to be.</p>
-            <p class="mt-4 text-base leading-relaxed text-slate-600">Every case starts with a digital scan and a treatment simulation, so you can see the projected end result before committing to anything.</p>
+        <!-- IMAGE PLACEHOLDER: ../../assets/AlignersLg.webp — cut-out treatment photo,
+             ideally a transparent PNG. object-contain, anchored bottom-right. -->
+        <div class="absolute bottom-0 right-0 z-0 hidden h-full w-full items-end justify-center sm:top-0 sm:flex sm:w-1/2 sm:-translate-x-10">
+          <div class="relative h-full w-full">
+            <img src="../../assets/AlignersLg.webp" alt="Clear invisible aligner tray used to straighten teeth discreetly"
+              class="absolute inset-0 h-full w-full origin-bottom-right scale-100 object-contain"
+              style="object-position: right bottom;" width="1200" height="900" fetchpriority="high" decoding="async">
           </div>
+        </div>
 
-          <div class="reveal">
-            <div class="hero-media overflow-hidden rounded-3xl shadow-card-hover">
-              <img src="../../assets/AlignersLg.webp" alt="Clear invisible aligner tray used to straighten teeth discreetly" class="h-full w-full object-cover" width="900" height="700"
-                loading="lazy" decoding="async">
+        <div class="pointer-events-none relative z-10 flex h-full items-center">
+          <div class="container-custom pointer-events-auto w-full px-6 sm:px-0">
+            <div
+              class="z-10 flex w-full flex-col items-center pr-2 pt-24 text-center sm:w-[55%] sm:items-start sm:pt-0 sm:text-left md:pt-24 lg:w-[65%] lg:pr-0 lg:pt-28">
+
+              <nav aria-label="Breadcrumb" class="mb-4">
+                <ol class="flex flex-wrap items-center justify-center gap-2 text-xs sm:justify-start"
+                  style="color: var(--muted-foreground);">
+                  <li><a href="../../index.html" class="transition hover:text-brand">Home</a></li>
+                  <li aria-hidden="true"><i class="fas fa-chevron-right text-[8px]"></i></li>
+                  <li><a href="../index.html" class="transition hover:text-brand">Services</a></li>
+                  <li aria-hidden="true"><i class="fas fa-chevron-right text-[8px]"></i></li>
+                  <li class="font-semibold" style="color: var(--primary);" aria-current="page">Invisible Aligners &amp; Braces</li>
+                </ol>
+              </nav>
+
+              <span class="mb-5 inline-block rounded-full bg-brand-mid/10 px-4 py-1.5 text-sm font-semibold tracking-wide text-brand-mid">
+                ✦ Orthodontics
+              </span>
+
+              <h1 class="heading-hero text-center sm:text-left lg:whitespace-nowrap">
+                <span style="color: var(--primary);">Invisible Aligners &amp; Braces</span>
+                <br>
+                <span class="text-black">in Manikonda</span>
+              </h1>
+
+              <!-- Mobile-only hero image, 2:1 crop -->
+              <div class="-mx-6 mb-8 mt-12 flex w-[calc(100%+3rem)] justify-center overflow-hidden sm:hidden">
+                <div class="relative max-h-[200px] w-full" style="aspect-ratio: 2 / 1;">
+                  <img src="../../assets/AlignersLg.webp" alt="" aria-hidden="true"
+                    class="absolute inset-0 h-full w-full scale-[1.1] object-contain object-center" width="800"
+                    height="400" decoding="async">
+                </div>
+              </div>
+
+              <p class="mb-8 hidden max-w-xl text-lg sm:block" style="color: var(--muted-foreground);">
+                Clear, removable aligners and modern braces to straighten teeth comfortably.
+              </p>
+
+              <div class="mb-6 flex w-full flex-col gap-4 pt-2 sm:w-auto sm:flex-row">
+                <a href="../../book-appointment/index.html" class="btn-cta">Book appointment</a>
+                <a href="../../contact-us/index.html" class="btn-cta">Consult Now</a>
+              </div>
+
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- BENEFITS -->
-    <section class="section-pad bg-surface">
-      <div class="container-x">
-        <div class="reveal mb-12 max-w-3xl">
-          <p class="eyebrow">Key Benefits</p>
-          <h2 class="h-section">Why Patients Choose This Treatment</h2>
+    <!-- ============================================================
+         TREATMENT OVERVIEW
+         Reference's 12-column split: copy plus a 2x2 grid of navy
+         tiles on the left (7 cols), a sticky booking card on the
+         right (5 cols).
+         ============================================================ -->
+    <section class="py-16 lg:py-20">
+      <div class="container-custom grid gap-12 px-6 lg:grid-cols-12 lg:gap-16">
+
+        <div class="reveal lg:col-span-7">
+          <h2 class="heading-section">Treatment Overview</h2>
+          <p class="text-body">
+            Crowded, gapped or protruding teeth are harder to clean, wear unevenly and often make people hide their smile. Orthodontic treatment fixes the position of the teeth themselves, which fixes both problems at once.
+          </p>
+          <p class="text-body mt-4">
+            We offer clear removable aligners as well as metal, ceramic and self-ligating braces. Which one suits you depends on how much movement is needed, how fast you want results, and how visible you're willing for the appliance to be.
+          </p>
+          <p class="text-body mb-10 mt-4">
+            Every case starts with a digital scan and a treatment simulation, so you can see the projected end result before committing to anything.
+          </p>
+
+          <h3 class="mb-6 flex items-center gap-3 text-xl font-bold" style="color: var(--secondary);">
+            <span class="h-1 w-8 rounded-full" style="background-color: var(--primary);"></span>Benefits
+          </h3>
+
+          <div class="reveal-group grid gap-4 sm:grid-cols-2">
+
+            <div class="reveal shadow-premium group flex items-start gap-3 rounded-2xl p-5 transition-all duration-300 hover:scale-[1.02]"
+              style="background-image: linear-gradient(to bottom right, #030A14, #1A4996);">
+              <span class="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-white/10">
+                <i class="fas fa-circle-check text-[11px] text-brand-soft"></i>
+              </span>
+              <span class="text-[0.9375rem] font-semibold leading-snug tracking-wide text-white">Virtually invisible</span>
+            </div>
+
+            <div class="reveal shadow-premium group flex items-start gap-3 rounded-2xl p-5 transition-all duration-300 hover:scale-[1.02]"
+              style="background-image: linear-gradient(to bottom right, #030A14, #1A4996);">
+              <span class="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-white/10">
+                <i class="fas fa-circle-check text-[11px] text-brand-soft"></i>
+              </span>
+              <span class="text-[0.9375rem] font-semibold leading-snug tracking-wide text-white">Removable for meals</span>
+            </div>
+
+            <div class="reveal shadow-premium group flex items-start gap-3 rounded-2xl p-5 transition-all duration-300 hover:scale-[1.02]"
+              style="background-image: linear-gradient(to bottom right, #030A14, #1A4996);">
+              <span class="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-white/10">
+                <i class="fas fa-circle-check text-[11px] text-brand-soft"></i>
+              </span>
+              <span class="text-[0.9375rem] font-semibold leading-snug tracking-wide text-white">Fewer clinic visits</span>
+            </div>
+
+            <div class="reveal shadow-premium group flex items-start gap-3 rounded-2xl p-5 transition-all duration-300 hover:scale-[1.02]"
+              style="background-image: linear-gradient(to bottom right, #030A14, #1A4996);">
+              <span class="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-white/10">
+                <i class="fas fa-circle-check text-[11px] text-brand-soft"></i>
+              </span>
+              <span class="text-[0.9375rem] font-semibold leading-snug tracking-wide text-white">Predictable planning</span>
+            </div>
+
+          </div>
         </div>
 
-        <div class="reveal-group grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          <div class="reveal card p-7">
-            <span class="flex h-12 w-12 items-center justify-center rounded-xl bg-brand text-xl text-white">
-              <i class="fas fa-eye-slash"></i>
-            </span>
-            <h3 class="mt-5 text-lg font-bold text-ink">Virtually invisible</h3>
-            <p class="mt-2 text-sm leading-relaxed text-slate-600">Clear aligners are barely noticeable in conversation or photographs.</p>
-          </div>
-          <div class="reveal card p-7">
-            <span class="flex h-12 w-12 items-center justify-center rounded-xl bg-brand text-xl text-white">
-              <i class="fas fa-utensils"></i>
-            </span>
-            <h3 class="mt-5 text-lg font-bold text-ink">Removable for meals</h3>
-            <p class="mt-2 text-sm leading-relaxed text-slate-600">Take aligners out to eat and to brush — no food restrictions at all.</p>
-          </div>
-          <div class="reveal card p-7">
-            <span class="flex h-12 w-12 items-center justify-center rounded-xl bg-brand text-xl text-white">
-              <i class="fas fa-calendar-check"></i>
-            </span>
-            <h3 class="mt-5 text-lg font-bold text-ink">Fewer clinic visits</h3>
-            <p class="mt-2 text-sm leading-relaxed text-slate-600">Aligner reviews are typically once every 6–8 weeks.</p>
-          </div>
-          <div class="reveal card p-7">
-            <span class="flex h-12 w-12 items-center justify-center rounded-xl bg-brand text-xl text-white">
-              <i class="fas fa-diagram-project"></i>
-            </span>
-            <h3 class="mt-5 text-lg font-bold text-ink">Predictable planning</h3>
-            <p class="mt-2 text-sm leading-relaxed text-slate-600">Digital treatment planning shows the projected result up front.</p>
+        <div class="relative lg:col-span-5">
+          <div class="group sticky top-28 overflow-hidden rounded-[2rem] bg-white p-8 shadow-card lg:p-10"
+            style="border: 1px solid color-mix(in oklab, var(--border) 40%, transparent);">
+            <div class="relative z-10 text-center lg:text-left">
+              <h3 class="mb-4 text-2xl font-bold" style="color: var(--secondary);">Ready to start your treatment?</h3>
+              <p class="text-body-small mb-8">
+                Get treated by clinical experts in Manikonda using the most advanced and painless dental technology.
+              </p>
+              <div class="space-y-4">
+                <a href="../../book-appointment/index.html?service=Invisible%20Aligners%20%26%20Braces"
+                  class="inline-flex w-full items-center justify-center rounded-xl px-8 py-5 text-base font-bold text-white shadow-lg transition-all active:scale-[0.98]"
+                  style="background-color: var(--primary);">
+                  <i class="fas fa-calendar mr-2 text-sm"></i> Book Appointment
+                </a>
+                <a href="tel:+919030271023"
+                  class="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-slate-50 px-8 py-4 text-base font-bold transition-all hover:bg-slate-100 active:scale-[0.98]"
+                  style="border: 1px solid var(--border); color: var(--secondary);">
+                  <i class="fas fa-phone text-sm"></i> +91 90302 71023
+                </a>
+              </div>
+            </div>
+            <div class="absolute -bottom-16 -right-16 z-0 h-48 w-48 rounded-full blur-3xl transition-transform duration-700 group-hover:scale-150"
+              style="background-color: rgba(26,73,150,0.05);"></div>
           </div>
         </div>
+
       </div>
     </section>
 
-    <!-- OPTIONS -->
-    <section class="section-pad bg-white">
-      <div class="container-x">
+    <!-- ============================================================
+         TREATMENT OPTIONS
+         Retained from the previous version of this page — the
+         reference treatment pages have no options section, so this is
+         restyled into the reference card system rather than dropped.
+         Delete this section for a strict 1:1 match with the reference.
+         ============================================================ -->
+    <section class="section-padding" style="background-color: var(--background);">
+      <div class="container-custom px-6 lg:px-12">
         <div class="grid gap-12 lg:grid-cols-[1fr_0.9fr] lg:gap-16">
           <div>
             <div class="reveal mb-8">
-              <p class="eyebrow">Your Options</p>
-              <h2 class="h-section">Approaches We Offer</h2>
-              <p class="lede">We recommend the option that fits your case, not the most expensive one on the list.</p>
+              <span class="badge-gradient">Your Options</span>
+              <h2 class="heading-section">Approaches <span class="gradient-text italic">We Offer</span></h2>
+              <p class="text-body text-sm">
+                We recommend the option that fits your case, not the most expensive one on the list.
+              </p>
             </div>
 
             <div class="reveal-group space-y-4">
-              <div class="reveal card flex gap-5 p-6">
-                <span class="font-display text-3xl font-bold text-brand-soft">01</span>
+              <div class="reveal premium-card flex gap-5 p-6">
+                <span class="text-3xl font-bold" style="color: var(--primary);">01</span>
                 <div>
-                  <h3 class="text-lg font-bold text-ink">Clear Aligners</h3>
-                  <p class="mt-1.5 text-sm leading-relaxed text-slate-600">A series of custom transparent trays worn 20–22 hours a day. Best for mild to moderate crowding, spacing and relapse cases.</p>
+                  <h3 class="text-lg font-bold" style="color: var(--secondary);">Clear Aligners</h3>
+                  <p class="mt-1.5 text-sm leading-relaxed" style="color: var(--muted-foreground);">A series of custom transparent trays worn 20–22 hours a day. Best for mild to moderate crowding, spacing and relapse cases.</p>
                 </div>
               </div>
-              <div class="reveal card flex gap-5 p-6">
-                <span class="font-display text-3xl font-bold text-brand-soft">02</span>
+              <div class="reveal premium-card flex gap-5 p-6">
+                <span class="text-3xl font-bold" style="color: var(--primary);">02</span>
                 <div>
-                  <h3 class="text-lg font-bold text-ink">Metal Braces</h3>
-                  <p class="mt-1.5 text-sm leading-relaxed text-slate-600">The most cost-effective and versatile option. Handles severe crowding, bite correction and complex rotations.</p>
+                  <h3 class="text-lg font-bold" style="color: var(--secondary);">Metal Braces</h3>
+                  <p class="mt-1.5 text-sm leading-relaxed" style="color: var(--muted-foreground);">The most cost-effective and versatile option. Handles severe crowding, bite correction and complex rotations.</p>
                 </div>
               </div>
-              <div class="reveal card flex gap-5 p-6">
-                <span class="font-display text-3xl font-bold text-brand-soft">03</span>
+              <div class="reveal premium-card flex gap-5 p-6">
+                <span class="text-3xl font-bold" style="color: var(--primary);">03</span>
                 <div>
-                  <h3 class="text-lg font-bold text-ink">Ceramic Braces</h3>
-                  <p class="mt-1.5 text-sm leading-relaxed text-slate-600">Tooth-coloured brackets that blend in far better than metal, with the same clinical capability.</p>
+                  <h3 class="text-lg font-bold" style="color: var(--secondary);">Ceramic Braces</h3>
+                  <p class="mt-1.5 text-sm leading-relaxed" style="color: var(--muted-foreground);">Tooth-coloured brackets that blend in far better than metal, with the same clinical capability.</p>
                 </div>
               </div>
-              <div class="reveal card flex gap-5 p-6">
-                <span class="font-display text-3xl font-bold text-brand-soft">04</span>
+              <div class="reveal premium-card flex gap-5 p-6">
+                <span class="text-3xl font-bold" style="color: var(--primary);">04</span>
                 <div>
-                  <h3 class="text-lg font-bold text-ink">Retainers</h3>
-                  <p class="mt-1.5 text-sm leading-relaxed text-slate-600">Worn after active treatment to hold the corrected position. Skipping retainers is the main cause of relapse.</p>
+                  <h3 class="text-lg font-bold" style="color: var(--secondary);">Retainers</h3>
+                  <p class="mt-1.5 text-sm leading-relaxed" style="color: var(--muted-foreground);">Worn after active treatment to hold the corrected position. Skipping retainers is the main cause of relapse.</p>
                 </div>
               </div>
             </div>
           </div>
 
           <div class="reveal">
+            <!-- IMAGE PLACEHOLDER: ../../assets/BracesLg.webp -->
             <div class="hero-media overflow-hidden rounded-3xl shadow-card">
-              <img src="../../assets/BracesLg.webp" alt="Modern ceramic and metal braces fitted on upper teeth" class="h-full w-full object-cover" width="900" height="700"
-                loading="lazy" decoding="async">
+              <img src="../../assets/BracesLg.webp"
+                alt="Modern ceramic and metal braces fitted on upper teeth" class="h-full w-full object-cover"
+                width="900" height="700" loading="lazy" decoding="async">
             </div>
 
-            <div class="mt-6 rounded-2xl bg-surface p-6">
-              <p class="flex items-center gap-2 text-sm font-bold text-brand">
+            <div class="premium-card mt-6 p-6">
+              <p class="flex items-center gap-2 text-sm font-bold" style="color: var(--primary);">
                 <i class="fas fa-hand-holding-dollar"></i> No-cost EMI available
               </p>
-              <p class="mt-2 text-sm leading-relaxed text-slate-600">
-                Spread the cost of major treatment over easy monthly instalments. Ask at the front desk for the current
-                plans.
+              <p class="mt-2 text-sm leading-relaxed" style="color: var(--muted-foreground);">
+                Spread the cost of major treatment over easy monthly instalments. Ask at the front desk for the current plans.
               </p>
             </div>
           </div>
@@ -468,182 +551,276 @@
       </div>
     </section>
 
-    <!-- PROCESS -->
-    <section class="section-pad bg-surface">
-      <div class="container-x">
-        <div class="reveal mb-12 max-w-3xl">
-          <p class="eyebrow">The Process</p>
-          <h2 class="h-section">What to Expect, Step by Step</h2>
+    <!-- ============================================================
+         TREATMENT PROCESS
+         Also retained from the previous version and restyled; the
+         reference treatment pages have no process section.
+         ============================================================ -->
+    <section class="section-padding">
+      <div class="container-custom px-6 lg:px-12">
+        <div class="reveal mb-14 text-left">
+          <span class="badge-gradient">The Process</span>
+          <h2 class="heading-section">What to Expect, <span class="gradient-text italic">Step by Step</span></h2>
         </div>
 
-        <div class="reveal-group grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          <div class="reveal card p-7">
-            <span class="flex h-11 w-11 items-center justify-center rounded-full bg-brand font-bold text-white">1</span>
-            <h3 class="mt-5 text-lg font-bold text-ink">Consultation &amp; Scan</h3>
-            <p class="mt-2 text-sm leading-relaxed text-slate-600">Photographs, digital scan and X-rays to record exactly where your teeth sit today.</p>
+        <div class="reveal-group grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
+          <div class="reveal premium-card flex h-full flex-col p-6">
+            <span class="flex h-11 w-11 items-center justify-center rounded-xl text-base font-bold text-white"
+              style="background-image: var(--grad-cta);">1</span>
+            <h3 class="mb-1.5 mt-5 text-lg font-bold leading-tight" style="color: var(--secondary);">Consultation &amp; Scan</h3>
+            <p class="text-[13px] leading-relaxed" style="color: var(--muted-foreground);">Photographs, digital scan and X-rays to record exactly where your teeth sit today.</p>
           </div>
-          <div class="reveal card p-7">
-            <span class="flex h-11 w-11 items-center justify-center rounded-full bg-brand font-bold text-white">2</span>
-            <h3 class="mt-5 text-lg font-bold text-ink">Treatment Simulation</h3>
-            <p class="mt-2 text-sm leading-relaxed text-slate-600">We show you the projected movement and end result, along with duration and cost.</p>
+          <div class="reveal premium-card flex h-full flex-col p-6">
+            <span class="flex h-11 w-11 items-center justify-center rounded-xl text-base font-bold text-white"
+              style="background-image: var(--grad-cta);">2</span>
+            <h3 class="mb-1.5 mt-5 text-lg font-bold leading-tight" style="color: var(--secondary);">Treatment Simulation</h3>
+            <p class="text-[13px] leading-relaxed" style="color: var(--muted-foreground);">We show you the projected movement and end result, along with duration and cost.</p>
           </div>
-          <div class="reveal card p-7">
-            <span class="flex h-11 w-11 items-center justify-center rounded-full bg-brand font-bold text-white">3</span>
-            <h3 class="mt-5 text-lg font-bold text-ink">Appliance Fitted</h3>
-            <p class="mt-2 text-sm leading-relaxed text-slate-600">Aligners are handed over with a wear schedule, or braces are bonded in a single sitting.</p>
+          <div class="reveal premium-card flex h-full flex-col p-6">
+            <span class="flex h-11 w-11 items-center justify-center rounded-xl text-base font-bold text-white"
+              style="background-image: var(--grad-cta);">3</span>
+            <h3 class="mb-1.5 mt-5 text-lg font-bold leading-tight" style="color: var(--secondary);">Appliance Fitted</h3>
+            <p class="text-[13px] leading-relaxed" style="color: var(--muted-foreground);">Aligners are handed over with a wear schedule, or braces are bonded in a single sitting.</p>
           </div>
-          <div class="reveal card p-7">
-            <span class="flex h-11 w-11 items-center justify-center rounded-full bg-brand font-bold text-white">4</span>
-            <h3 class="mt-5 text-lg font-bold text-ink">Reviews &amp; Retention</h3>
-            <p class="mt-2 text-sm leading-relaxed text-slate-600">Progress checks every 4–8 weeks, then retainers to lock in the final position.</p>
+          <div class="reveal premium-card flex h-full flex-col p-6">
+            <span class="flex h-11 w-11 items-center justify-center rounded-xl text-base font-bold text-white"
+              style="background-image: var(--grad-cta);">4</span>
+            <h3 class="mb-1.5 mt-5 text-lg font-bold leading-tight" style="color: var(--secondary);">Reviews &amp; Retention</h3>
+            <p class="text-[13px] leading-relaxed" style="color: var(--muted-foreground);">Progress checks every 4–8 weeks, then retainers to lock in the final position.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- FAQ -->
-    <section id="faq" class="section-pad bg-white">
-      <div class="container-x">
-        <div class="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16">
-          <div class="reveal">
-            <p class="eyebrow">Common Questions</p>
-            <h2 class="h-section">Frequently Asked Questions</h2>
-            <p class="lede">
-              Something not covered here? Call
-              <a href="tel:+919030271023" class="font-semibold text-brand hover:underline">+91 90302 71023</a> or visit
-              our <a href="../../contact-us/index.html" class="font-semibold text-brand hover:underline">contact page</a>.
+    <!-- ============================================================
+         FAQ
+         Reference layout: 40/60 split, copy and a Contact CTA on the
+         left, premium-card accordions on the right. Keeps the
+         existing .faq-item / .faq-trigger / .faq-panel / .faq-icon
+         contract that script.js drives.
+         ============================================================ -->
+    <section id="faq" class="section-padding" style="background-color: var(--background);">
+      <div class="container-custom px-6 lg:px-12">
+        <div class="flex flex-col items-start gap-12 lg:flex-row">
+
+          <div class="reveal w-full lg:w-[40%]">
+            <div class="mb-4 text-xs font-bold uppercase tracking-[0.2em]" style="color: var(--primary);">Common Questions</div>
+            <h2 class="heading-section">Frequently Asked <span class="gradient-text italic">Questions</span></h2>
+            <p class="text-body mb-10">
+              Can't find what you're looking for? Our team is here to help you understand your treatment process and
+              options.
             </p>
+            <a href="../../contact-us/index.html"
+              class="group inline-flex items-center gap-2 rounded-xl px-8 py-4 font-bold text-white shadow-lg transition-all"
+              style="background-color: var(--primary);">
+              Contact Us <i class="fas fa-arrow-right text-sm transition-transform group-hover:translate-x-1"></i>
+            </a>
           </div>
 
-          <div class="reveal space-y-4">
+          <div class="reveal flex w-full flex-col gap-4 lg:w-[60%]">
 
-            <div class="faq-item card is-open overflow-hidden">
-              <button type="button" class="faq-trigger flex w-full items-center justify-between gap-4 p-6 text-left"
+            <div class="faq-item premium-card is-open overflow-hidden">
+              <button type="button" class="faq-trigger flex w-full items-center justify-between p-5 text-left lg:p-6"
                 aria-expanded="true">
-                <span class="text-base font-bold text-ink">How long does aligner treatment take?</span>
-                <span class="faq-icon flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-surface text-brand">
+                <span class="pr-4 text-sm font-bold sm:text-base lg:text-lg" style="color: var(--secondary);">How long does aligner treatment take?</span>
+                <span class="faq-icon flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-brand/10 text-brand lg:h-9 lg:w-9">
                   <i class="fas fa-plus text-xs"></i>
                 </span>
               </button>
               <div class="faq-panel">
-                <p class="px-6 pb-6 text-sm leading-relaxed text-slate-600">
+                <div class="border-t px-5 pb-5 pt-4 text-xs sm:text-sm lg:px-6 lg:pb-6"
+                  style="border-color: color-mix(in oklab, var(--border) 50%, transparent); color: var(--muted-foreground);">
                   Mild cases finish in 6 to 9 months. Moderate crowding usually takes 12 to 18 months, and complex bite correction can run up to 24 months. We give you a specific estimate after the digital scan.
-                </p>
+                </div>
               </div>
             </div>
 
-            <div class="faq-item card overflow-hidden">
-              <button type="button" class="faq-trigger flex w-full items-center justify-between gap-4 p-6 text-left"
+            <div class="faq-item premium-card overflow-hidden">
+              <button type="button" class="faq-trigger flex w-full items-center justify-between p-5 text-left lg:p-6"
                 aria-expanded="false">
-                <span class="text-base font-bold text-ink">Are clear aligners as effective as braces?</span>
-                <span class="faq-icon flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-surface text-brand">
+                <span class="pr-4 text-sm font-bold sm:text-base lg:text-lg" style="color: var(--secondary);">Are clear aligners as effective as braces?</span>
+                <span class="faq-icon flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-brand/10 text-brand lg:h-9 lg:w-9">
                   <i class="fas fa-plus text-xs"></i>
                 </span>
               </button>
               <div class="faq-panel">
-                <p class="px-6 pb-6 text-sm leading-relaxed text-slate-600">
+                <div class="border-t px-5 pb-5 pt-4 text-xs sm:text-sm lg:px-6 lg:pb-6"
+                  style="border-color: color-mix(in oklab, var(--border) 50%, transparent); color: var(--muted-foreground);">
                   For mild to moderate crowding, spacing and relapse, yes — the results are comparable. For severe rotations, large gaps needing space closure, or significant bite correction, fixed braces still give more predictable control.
-                </p>
+                </div>
               </div>
             </div>
 
-            <div class="faq-item card overflow-hidden">
-              <button type="button" class="faq-trigger flex w-full items-center justify-between gap-4 p-6 text-left"
+            <div class="faq-item premium-card overflow-hidden">
+              <button type="button" class="faq-trigger flex w-full items-center justify-between p-5 text-left lg:p-6"
                 aria-expanded="false">
-                <span class="text-base font-bold text-ink">Do braces hurt?</span>
-                <span class="faq-icon flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-surface text-brand">
+                <span class="pr-4 text-sm font-bold sm:text-base lg:text-lg" style="color: var(--secondary);">Do braces hurt?</span>
+                <span class="faq-icon flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-brand/10 text-brand lg:h-9 lg:w-9">
                   <i class="fas fa-plus text-xs"></i>
                 </span>
               </button>
               <div class="faq-panel">
-                <p class="px-6 pb-6 text-sm leading-relaxed text-slate-600">
+                <div class="border-t px-5 pb-5 pt-4 text-xs sm:text-sm lg:px-6 lg:pb-6"
+                  style="border-color: color-mix(in oklab, var(--border) 50%, transparent); color: var(--muted-foreground);">
                   There is mild soreness for two to three days after fitting and after each adjustment, similar to the ache after a long chewing session. Over-the-counter pain relief handles it comfortably. Aligners feel tight for the first day of each new tray.
-                </p>
+                </div>
               </div>
             </div>
 
-            <div class="faq-item card overflow-hidden">
-              <button type="button" class="faq-trigger flex w-full items-center justify-between gap-4 p-6 text-left"
+            <div class="faq-item premium-card overflow-hidden">
+              <button type="button" class="faq-trigger flex w-full items-center justify-between p-5 text-left lg:p-6"
                 aria-expanded="false">
-                <span class="text-base font-bold text-ink">Can adults get braces or aligners?</span>
-                <span class="faq-icon flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-surface text-brand">
+                <span class="pr-4 text-sm font-bold sm:text-base lg:text-lg" style="color: var(--secondary);">Can adults get braces or aligners?</span>
+                <span class="faq-icon flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-brand/10 text-brand lg:h-9 lg:w-9">
                   <i class="fas fa-plus text-xs"></i>
                 </span>
               </button>
               <div class="faq-panel">
-                <p class="px-6 pb-6 text-sm leading-relaxed text-slate-600">
+                <div class="border-t px-5 pb-5 pt-4 text-xs sm:text-sm lg:px-6 lg:pb-6"
+                  style="border-color: color-mix(in oklab, var(--border) 50%, transparent); color: var(--muted-foreground);">
                   Yes. Teeth move at any age as long as the gums and supporting bone are healthy. A large share of our orthodontic patients are adults in their 30s and 40s, and clear aligners are especially popular with them.
-                </p>
+                </div>
               </div>
             </div>
+
           </div>
         </div>
       </div>
     </section>
 
-    <!-- RELATED -->
-    <section class="section-pad bg-surface">
-      <div class="container-x">
-        <div class="reveal mb-10 max-w-3xl">
-          <p class="eyebrow">Related Treatments</p>
-          <h2 class="h-section">You Might Also Need</h2>
+    <!-- ============================================================
+         RELATED TREATMENTS
+         Retained from the previous version, restyled. The reference
+         treatment pages have no related-services section.
+         ============================================================ -->
+    <section class="section-padding">
+      <div class="container-custom px-6 lg:px-12">
+        <div class="reveal mb-10 text-left">
+          <span class="badge-gradient">Related Treatments</span>
+          <h2 class="heading-section">You Might <span class="gradient-text italic">Also Need</span></h2>
         </div>
 
-        <div class="reveal-group grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div class="reveal-group grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
 
-          <a href="../../services/dental-implants/index.html" class="reveal card-hover group flex items-start gap-4 p-6">
-            <span class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-surface text-xl text-brand">
+          <a href="../dental-implants/index.html" class="reveal premium-card group flex items-start gap-4 p-6">
+            <span class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl text-xl text-white"
+              style="background-image: var(--grad-cta);">
               <i class="fas fa-screwdriver-wrench"></i>
             </span>
             <span>
-              <span class="block text-lg font-bold text-ink">Dental Implants</span>
-              <span class="mt-1 block text-sm text-slate-600">Permanent tooth replacement</span>
-              <span class="mt-3 inline-flex items-center gap-2 text-sm font-semibold text-brand transition group-hover:gap-3">
+              <span class="block text-lg font-bold" style="color: var(--secondary);">Dental Implants</span>
+              <span class="mt-1 block text-sm" style="color: var(--muted-foreground);">Permanent tooth replacement</span>
+              <span class="mt-3 inline-flex items-center gap-2 text-sm font-semibold transition-all group-hover:gap-3"
+                style="color: var(--primary);">
                 Details <i class="fas fa-arrow-right text-xs"></i>
               </span>
             </span>
           </a>
 
-          <a href="../../services/crowns-bridges/index.html" class="reveal card-hover group flex items-start gap-4 p-6">
-            <span class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-surface text-xl text-brand">
+          <a href="../crowns-bridges/index.html" class="reveal premium-card group flex items-start gap-4 p-6">
+            <span class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl text-xl text-white"
+              style="background-image: var(--grad-cta);">
               <i class="fas fa-crown"></i>
             </span>
             <span>
-              <span class="block text-lg font-bold text-ink">Crowns &amp; Bridges</span>
-              <span class="mt-1 block text-sm text-slate-600">Restore damaged teeth</span>
-              <span class="mt-3 inline-flex items-center gap-2 text-sm font-semibold text-brand transition group-hover:gap-3">
+              <span class="block text-lg font-bold" style="color: var(--secondary);">Crowns &amp; Bridges</span>
+              <span class="mt-1 block text-sm" style="color: var(--muted-foreground);">Restore damaged teeth</span>
+              <span class="mt-3 inline-flex items-center gap-2 text-sm font-semibold transition-all group-hover:gap-3"
+                style="color: var(--primary);">
                 Details <i class="fas fa-arrow-right text-xs"></i>
               </span>
             </span>
           </a>
 
-          <a href="../../services/pediatric-dentistry/index.html" class="reveal card-hover group flex items-start gap-4 p-6">
-            <span class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-surface text-xl text-brand">
+          <a href="../pediatric-dentistry/index.html" class="reveal premium-card group flex items-start gap-4 p-6">
+            <span class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl text-xl text-white"
+              style="background-image: var(--grad-cta);">
               <i class="fas fa-child"></i>
             </span>
             <span>
-              <span class="block text-lg font-bold text-ink">Pediatric Dentistry</span>
-              <span class="mt-1 block text-sm text-slate-600">Gentle care for children</span>
-              <span class="mt-3 inline-flex items-center gap-2 text-sm font-semibold text-brand transition group-hover:gap-3">
+              <span class="block text-lg font-bold" style="color: var(--secondary);">Pediatric Dentistry</span>
+              <span class="mt-1 block text-sm" style="color: var(--muted-foreground);">Gentle care for children</span>
+              <span class="mt-3 inline-flex items-center gap-2 text-sm font-semibold transition-all group-hover:gap-3"
+                style="color: var(--primary);">
                 Details <i class="fas fa-arrow-right text-xs"></i>
               </span>
             </span>
           </a>
+
         </div>
       </div>
     </section>
 
-    <!-- CTA -->
-    <section class="bg-brand-gradient bg-dot-grid py-14 lg:py-20">
-      <div class="container-x">
-        <div class="reveal flex flex-col items-start gap-8 lg:flex-row lg:items-center lg:justify-between">
-          <div class="max-w-2xl">
-            <h2 class="font-display text-3xl font-bold leading-tight text-white sm:text-4xl">Ready for Your Transformation?</h2>
-            <p class="mt-4 text-base leading-relaxed text-brand-soft">Book a consultation and get a clear diagnosis, your options and a written estimate — with no obligation to proceed.</p>
-          </div>
-          <div class="flex flex-wrap gap-4">
-            <a href="../../book-appointment/index.html" class="btn-gold">Book Appointment</a>
-            <a href="tel:+919030271023" class="btn-ghost-light"><i class="fas fa-phone text-sm"></i> +91 90302 71023</a>
+    <!-- ============================================================
+         APPOINTMENT CTA
+         Identical to the Services page: #0F172A slab on the pale blue
+         band, 40px radius growing to 56px, two blurred colour blobs.
+         ============================================================ -->
+    <section class="section-padding relative overflow-hidden" style="background-color: var(--background);">
+      <div class="container-custom relative z-10">
+        <div class="reveal relative overflow-hidden rounded-[2.5rem] p-8 shadow-2xl lg:rounded-[3.5rem] lg:p-16"
+          style="background-color: var(--secondary);">
+
+          <div class="absolute right-0 top-0 z-0 h-96 w-96 rounded-full blur-[100px]"
+            style="background-color: rgba(26,73,150,0.10);"></div>
+          <div class="absolute bottom-0 left-0 z-0 h-64 w-64 rounded-full blur-[100px]"
+            style="background-color: rgba(56,189,248,0.05);"></div>
+
+          <div class="relative z-10 flex flex-col items-center justify-between gap-12 lg:flex-row lg:gap-20">
+
+            <div class="max-w-3xl text-center lg:text-left">
+              <div class="mb-8 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-6 py-2 text-sm font-bold text-white backdrop-blur-sm">
+                Ready for Your Transformation?
+              </div>
+              <h2 class="mb-6 text-2xl font-bold leading-[1.15] text-white sm:text-3xl lg:text-4xl xl:text-[3.5rem]">
+                Book your <span class="italic">consultation</span> today
+              </h2>
+              <p class="mx-auto max-w-xl text-base leading-relaxed text-slate-400 lg:mx-0 lg:text-xl">
+                Get treated by experienced dentists in Manikonda with advanced and painless dental care.
+              </p>
+
+              <div class="mt-12 hidden flex-wrap justify-start gap-12 lg:flex">
+                <div class="flex items-start gap-3">
+                  <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-white/10 bg-white/5"
+                    style="color: var(--primary);">
+                    <i class="fas fa-phone text-sm"></i>
+                  </div>
+                  <div class="flex flex-col">
+                    <a href="tel:+919030271023"
+                      class="text-lg font-bold leading-tight text-white transition hover:text-brand-soft">+91 90302
+                      71023</a>
+                    <a href="tel:+917416860888"
+                      class="mt-1 text-lg font-bold leading-tight text-white transition hover:text-brand-soft">+91 74168
+                      60888</a>
+                  </div>
+                </div>
+                <div class="flex items-start gap-3">
+                  <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-white/10 bg-white/5"
+                    style="color: var(--primary);">
+                    <i class="fas fa-calendar text-sm"></i>
+                  </div>
+                  <div class="flex flex-col">
+                    <span class="text-base font-bold leading-tight text-white">Mon - Sat: 10AM - 2PM, 4PM - 8PM</span>
+                    <span class="mt-1 text-base font-bold leading-tight text-white">Sun: 10AM - 1PM</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="flex w-full shrink-0 flex-col items-center gap-6 sm:w-auto">
+              <a href="../../book-appointment/index.html"
+                class="group inline-flex h-14 w-full max-w-md items-center justify-center rounded-xl px-6 py-3.5 text-base font-bold text-white shadow-xl transition-all active:scale-[0.98] sm:min-w-[320px] lg:h-16 lg:px-10 lg:py-5 lg:text-xl"
+                style="background-color: var(--primary);">
+                Book Consultation
+                <i class="fas fa-arrow-right ml-3 text-sm transition-transform group-hover:translate-x-1"></i>
+              </a>
+              <a href="https://wa.me/919030271023" target="_blank" rel="noopener noreferrer"
+                class="inline-flex h-14 w-full max-w-md items-center justify-center rounded-xl border border-slate-200 bg-white px-6 py-3.5 text-base font-bold shadow-sm transition-all hover:bg-slate-50 active:scale-[0.98] sm:min-w-[320px] lg:h-16 lg:px-10 lg:py-5 lg:text-xl"
+                style="color: var(--secondary);">
+                <i class="fab fa-whatsapp mr-3 text-2xl text-whatsapp"></i> WhatsApp us
+              </a>
+            </div>
+
           </div>
         </div>
       </div>
@@ -652,40 +829,41 @@
   </main>
 
   <!-- ============================================================
-       FOOTER
+       FOOTER — #0A1D3D, pt-24 pb-12
        ============================================================ -->
-  <footer class="bg-brand-deep pt-16 text-slate-300">
-    <div class="container-x">
-      <div class="grid gap-10 pb-12 sm:grid-cols-2 lg:grid-cols-4">
+  <footer class="overflow-hidden border-t border-white/5 pb-12 pt-24 text-white" style="background-color: #0A1D3D;">
+    <div class="container-custom px-6 lg:px-12">
+      <div class="grid gap-10 pb-12 lg:grid-cols-[1.2fr_1fr_1.2fr]">
 
         <div>
           <a href="../../index.html" class="mb-5 flex items-center gap-3">
-            <span class="flex h-11 w-11 items-center justify-center rounded-xl bg-brand text-white">
+            <span class="flex h-11 w-11 items-center justify-center rounded-xl text-white"
+              style="background-image: var(--grad-cta);">
               <i class="fas fa-tooth text-xl"></i>
             </span>
-            <span class="font-display text-xl font-bold text-white">Best Dental Clinic</span>
+            <span class="text-xl font-extrabold text-white">Best Dental Clinic</span>
           </a>
-          <p class="text-sm leading-relaxed">
-            Redefining dental excellence with a fusion of advanced technology and personalised aesthetic vision.
+          <p class="max-w-sm text-sm italic leading-relaxed text-slate-300">
+            Redefining dental excellence with a fusion of advanced technology and personalized aesthetic vision.
           </p>
           <div class="mt-6 flex gap-3">
             <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"
-              class="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white transition hover:bg-gold hover:text-brand-deep">
+              class="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white transition hover:bg-white hover:text-brand-deep">
               <i class="fab fa-facebook-f"></i>
             </a>
             <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"
-              class="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white transition hover:bg-gold hover:text-brand-deep">
+              class="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white transition hover:bg-white hover:text-brand-deep">
               <i class="fab fa-instagram"></i>
             </a>
             <a href="https://wa.me/919030271023" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"
-              class="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white transition hover:bg-gold hover:text-brand-deep">
+              class="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white transition hover:bg-white hover:text-brand-deep">
               <i class="fab fa-whatsapp"></i>
             </a>
           </div>
         </div>
 
         <div>
-          <h3 class="footer-heading">Our Services</h3>
+          <h3 class="mb-5 text-base font-bold text-white">Our Services</h3>
           <ul class="space-y-2.5">
             <li><a href="../../services/invisible-aligners-braces/index.html" class="footer-link">Invisible Aligners &amp; Braces</a></li>
             <li><a href="../../services/dental-implants/index.html" class="footer-link">Dental Implants</a></li>
@@ -698,57 +876,53 @@
         </div>
 
         <div>
-          <h3 class="footer-heading">Quick Links</h3>
-          <ul class="space-y-2.5">
-            <li><a href="../../index.html" class="footer-link">Home</a></li>
-            <li><a href="../../about-us/index.html" class="footer-link">About Us</a></li>
-            <li><a href="../../services/index.html" class="footer-link">All Services</a></li>
-            <li><a href="../../blogs/index.html" class="footer-link">Blogs</a></li>
-            <li><a href="../../cases/index.html" class="footer-link">Cases</a></li>
-            <li><a href="../../contact-us/index.html" class="footer-link">Contact Us</a></li>
-            <li><a href="../../book-appointment/index.html" class="footer-link">Book Appointment</a></li>
-          </ul>
-        </div>
-
-        <div>
-          <h3 class="footer-heading">Visit Our Clinic</h3>
-          <ul class="space-y-4 text-sm">
+          <h3 class="mb-5 text-base font-bold text-white">Visit Our Clinic</h3>
+          <ul class="space-y-5 text-sm">
             <li class="flex gap-3">
-              <i class="fas fa-location-dot mt-1 text-gold"></i>
-              <a href="https://www.google.com/maps?q=Alkapur+Township,+Manikonda,+Hyderabad" target="_blank"
-                rel="noopener noreferrer" class="transition hover:text-gold">
-                Alkapur Township, Manikonda,<br>Hyderabad, Telangana 500089
-              </a>
-            </li>
-            <li class="flex gap-3">
-              <i class="fas fa-phone mt-1 text-gold"></i>
-              <span>
-                <a href="tel:+919030271023" class="block transition hover:text-gold">+91 90302 71023</a>
-                <a href="tel:+917416860888" class="block transition hover:text-gold">+91 74168 60888</a>
+              <i class="fas fa-location-dot mt-1 text-brand-soft"></i>
+              <span class="text-slate-300">
+                <strong class="block font-bold text-white">Clinic Address</strong>
+                <a href="https://www.google.com/maps?q=Alkapur+Township,+Manikonda,+Hyderabad" target="_blank"
+                  rel="noopener noreferrer" class="transition hover:text-white">
+                  Alkapur Township, Huda, Mahalneknapur, Manikonda, Hyderabad, Telangana - 500089
+                </a>
               </span>
             </li>
             <li class="flex gap-3">
-              <i class="fas fa-envelope mt-1 text-gold"></i>
-              <a href="mailto:bestdentalclinic@gmail.com" class="break-all transition hover:text-gold">
-                bestdentalclinic@gmail.com
-              </a>
+              <i class="fas fa-phone mt-1 text-brand-soft"></i>
+              <span class="text-slate-300">
+                <strong class="block font-bold text-white">Direct Help</strong>
+                <a href="tel:+919030271023" class="block transition hover:text-white">+91 90302 71023</a>
+                <a href="tel:+917416860888" class="block transition hover:text-white">+91 74168 60888</a>
+              </span>
             </li>
             <li class="flex gap-3">
-              <i class="fas fa-clock mt-1 text-gold"></i>
-              <span>Mon–Sat: 10 AM – 2 PM, 4 PM – 8 PM<br>Sunday: 10 AM – 1 PM</span>
+              <i class="fas fa-envelope mt-1 text-brand-soft"></i>
+              <span class="text-slate-300">
+                <strong class="block font-bold text-white">Official Support</strong>
+                <a href="mailto:bestdentalclinic@gmail.com" class="break-all transition hover:text-white">
+                  bestdentalclinic@gmail.com
+                </a>
+              </span>
             </li>
           </ul>
         </div>
 
       </div>
 
-      <div class="flex flex-col gap-4 border-t border-white/10 py-7 text-xs sm:flex-row sm:items-center sm:justify-between">
-        <p>&copy; <span data-current-year>2026</span> Best Dental Clinic. All rights reserved.</p>
+      <p class="rounded-2xl bg-white/5 p-5 text-xs leading-relaxed text-slate-400">
+        <strong class="text-slate-300">Medical Disclaimer:</strong> All information provided on this website is for
+        general educational purposes and does not constitute medical advice. Please consult with our qualified dental
+        team for a professional diagnosis and treatment plan tailored to your specific needs.
+      </p>
+
+      <div
+        class="mt-6 flex flex-col gap-4 border-t border-white/10 pt-7 text-xs text-slate-400 sm:flex-row sm:items-center sm:justify-between">
+        <p>&copy; <span data-current-year>2026</span> Best Dental Clinic, Manikonda. All rights reserved.</p>
         <div class="flex flex-wrap gap-x-5 gap-y-2">
-          <a href="#" class="transition hover:text-gold">Privacy Policy</a>
-          <a href="#" class="transition hover:text-gold">Terms of Service</a>
-          <a href="#" class="transition hover:text-gold">Safety Protocols</a>
-          <a href="#" class="transition hover:text-gold">Medical Disclaimer</a>
+          <a href="#" class="transition hover:text-white">Privacy Policy</a>
+          <a href="#" class="transition hover:text-white">Terms of Service</a>
+          <a href="#" class="transition hover:text-white">Safety Protocols</a>
         </div>
       </div>
     </div>
@@ -756,7 +930,8 @@
 
   <div class="floating-actions fixed bottom-6 right-5 z-50 flex flex-col gap-3">
     <button id="backToTop" type="button" aria-label="Back to top"
-      class="flex h-11 w-11 items-center justify-center rounded-full bg-brand text-white opacity-0 shadow-brand transition duration-300 hover:bg-brand-mid">
+      class="flex h-11 w-11 items-center justify-center rounded-full text-white opacity-0 shadow-premium transition duration-300"
+      style="background-image: var(--grad-cta);">
       <i class="fas fa-arrow-up"></i>
     </button>
     <a href="https://wa.me/919030271023" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp"
