@@ -162,6 +162,12 @@
     @apply mb-3 block text-[11px] font-bold uppercase tracking-[0.22em] text-brand sm:text-xs;
   }
 
+  /* The gold dash that precedes every eyebrow label. Kept here because
+     .eyebrow-brand::before below only recolours it. */
+  .eyebrow::before {
+    @apply content-[''] inline-block h-1 w-7 rounded-full bg-gold;
+  }
+
   /* Brand-blue rule instead of gold, for light sections */
   .eyebrow-brand::before {
     @apply bg-brand;
