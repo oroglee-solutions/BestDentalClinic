@@ -19,13 +19,13 @@
   <meta property="og:title" content="Dental Services in Manikonda, Hyderabad | Best Dental Clinic">
   <meta property="og:description" content="Complete dental services in Manikonda, Hyderabad — aligners and braces, implants, crowns and bridges, pediatric dentistry, emergency care, cosmetic dentistry, cleaning and whitening.">
   <meta property="og:url" content="https://www.bestdentalclinic.com/services/">
-  <meta property="og:image" content="https://www.bestdentalclinic.com/assets/ImplantsLg.webp">
+  <meta property="og:image" content="https://www.bestdentalclinic.com/assets/service-2.webp">
   <meta property="og:locale" content="en_IN">
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Dental Services in Manikonda, Hyderabad | Best Dental Clinic">
   <meta name="twitter:description" content="Complete dental services in Manikonda, Hyderabad — aligners and braces, implants, crowns and bridges, pediatric dentistry, emergency care, cosmetic dentistry, cleaning and whitening.">
-  <meta name="twitter:image" content="https://www.bestdentalclinic.com/assets/ImplantsLg.webp">
+  <meta name="twitter:image" content="https://www.bestdentalclinic.com/assets/service-2.webp">
 
   <link rel="icon" href="../assets/HeroImg.webp">
 
@@ -304,67 +304,54 @@
 
     <!-- ============================================================
          HERO
-         Same construction as the home page: cut-out photograph
-         anchored bottom-right of a vertical #EEF5FF → #FEFEFF →
-         #EEF5FF band, copy over the left 55%/65% of the container.
+         Same construction as the home page: two-column band on the
+         #EEF5FF → #FEFEFF → #EEF5FF gradient — copy left, framed
+         photograph right, stacking to one column below 1024px.
          ============================================================ -->
-    <section class="relative h-auto w-full overflow-hidden max-sm:pb-6 sm:h-[80vh] sm:min-h-[540px]"
-      style="background: var(--grad-hero);">
-      <div class="relative h-full w-full">
+    <section class="relative w-full overflow-hidden" style="background: var(--grad-hero);">
+      <div class="container-custom py-10 sm:py-14 lg:py-20">
+        <div class="grid items-center gap-10 lg:grid-cols-2 lg:gap-14 xl:gap-16">
 
-        <!-- IMAGE PLACEHOLDER: ../assets/services-hero.png — cut-out clinic/dentist
-             photo, ideally a transparent PNG. object-contain, anchored bottom. -->
-        <div class="absolute bottom-0 right-0 z-0 hidden h-full w-full items-end justify-center sm:top-0 sm:flex sm:w-1/2 sm:-translate-x-10">
-          <div class="relative h-full w-full">
-            <img src="../assets/services-hero.png" alt="Dental services at Best Dental Clinic, Manikonda, Hyderabad"
-              class="absolute inset-0 h-full w-full origin-bottom-right scale-100 object-contain"
-              style="object-position: center bottom;" width="1200" height="900" fetchpriority="high" decoding="async">
+          <div class="flex flex-col items-center text-center lg:items-start lg:text-left">
+
+            <nav aria-label="Breadcrumb" class="mb-4">
+              <ol class="flex flex-wrap items-center justify-center gap-2 text-xs lg:justify-start"
+                style="color: var(--muted-foreground);">
+                <li><a href="../index.html" class="transition hover:text-brand">Home</a></li>
+                <li aria-hidden="true"><i class="fas fa-chevron-right text-[8px]"></i></li>
+                <li class="font-semibold" style="color: var(--primary);" aria-current="page">Services</li>
+              </ol>
+            </nav>
+
+            <h1 class="heading-hero text-center lg:text-left">
+              <span style="color: var(--primary);">Complete Dental</span>
+              <br>
+              <span style="color: var(--primary);">Services</span> <span class="text-black">in Manikonda,</span>
+              <br>
+              <span class="text-black">Hyderabad</span>
+            </h1>
+
+            <p class="mb-8 max-w-xl text-base sm:text-lg" style="color: var(--muted-foreground);">
+              We offer a wide range of dental treatments designed to improve your oral health, restore functionality,
+              and enhance your smile. Our services include preventive, restorative, cosmetic, and emergency dental
+              care—routine and advanced procedures under one roof.
+            </p>
+
+            <div class="flex w-full flex-col gap-4 sm:w-auto sm:flex-row">
+              <a href="../book-appointment/index.html" class="btn-cta">Book appointment</a>
+            </div>
+
           </div>
-        </div>
 
-        <div class="pointer-events-none relative z-10 flex h-full items-center">
-          <div class="container-custom pointer-events-auto w-full px-6 sm:px-0">
-            <div
-              class="z-10 flex w-full translate-y-0 flex-col items-center pr-2 pt-8 text-center sm:w-[55%] sm:translate-y-6 sm:items-start sm:pt-0 sm:text-left lg:w-[65%] lg:translate-y-12 lg:pr-0">
-
-              <nav aria-label="Breadcrumb" class="mb-4">
-                <ol class="flex flex-wrap items-center justify-center gap-2 text-xs sm:justify-start"
-                  style="color: var(--muted-foreground);">
-                  <li><a href="../index.html" class="transition hover:text-brand">Home</a></li>
-                  <li aria-hidden="true"><i class="fas fa-chevron-right text-[8px]"></i></li>
-                  <li class="font-semibold" style="color: var(--primary);" aria-current="page">Services</li>
-                </ol>
-              </nav>
-
-              <h1 class="heading-hero text-center sm:text-left lg:whitespace-nowrap">
-                <span style="color: var(--primary);">Complete Dental</span>
-                <br>
-                <span style="color: var(--primary);">Services</span> <span class="text-black">in Manikonda,</span>
-                <br>
-                <span class="text-black">Hyderabad</span>
-              </h1>
-
-              <!-- Mobile-only hero image, 2:1 crop -->
-              <div class="-mx-6 mb-8 mt-12 flex w-[calc(100%+3rem)] justify-center overflow-hidden sm:hidden">
-                <div class="relative max-h-[200px] w-full" style="aspect-ratio: 2 / 1;">
-                  <img src="../assets/services-hero.png" alt="" aria-hidden="true"
-                    class="absolute inset-0 h-full w-full scale-[1.1] object-contain object-center" width="800"
-                    height="400" decoding="async">
-                </div>
-              </div>
-
-              <p class="mb-8 hidden max-w-xl text-lg sm:block" style="color: var(--muted-foreground);">
-                We offer a wide range of dental treatments designed to improve your oral health, restore functionality,
-                and enhance your smile. Our services include preventive, restorative, cosmetic, and emergency dental
-                care—routine and advanced procedures under one roof.
-              </p>
-
-              <div class="mb-6 flex w-full flex-col gap-4 pt-2 sm:w-auto sm:flex-row">
-                <a href="../book-appointment/index.html" class="btn-cta">Book appointment</a>
-              </div>
-
+          <div class="relative w-full">
+            <div class="relative aspect-[4/3] lg:aspect-[5/4] w-full overflow-hidden rounded-2xl shadow-brand sm:rounded-3xl">
+              <img src="../assets/ServiceHeroImg.webp"
+                alt="Dental services at Best Dental Clinic, Manikonda, Hyderabad"
+                class="absolute inset-0 h-full w-full object-cover" width="1537" height="1023" fetchpriority="high"
+                decoding="async">
             </div>
           </div>
+
         </div>
       </div>
     </section>
@@ -392,10 +379,10 @@
 
         <div class="reveal-group grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
 
-          <!-- IMAGE PLACEHOLDER: ../assets/service-1.jpg — Invisible Aligners & Braces -->
+          <!-- IMAGE PLACEHOLDER: ../assets/service-1.webp — Invisible Aligners & Braces -->
           <div class="reveal svc-card premium-card group flex h-full flex-col overflow-hidden">
             <div class="svc-media">
-              <img src="../assets/service-1.jpg" alt="Invisible Aligners &amp; Braces" width="600" height="413"
+              <img src="../assets/service-1.webp" alt="Invisible Aligners &amp; Braces" width="1536" height="1024"
                 loading="lazy" decoding="async">
               <div class="absolute inset-0" style="background: linear-gradient(to top, rgba(15,23,42,0.4), transparent 60%);"></div>
             </div>
@@ -413,10 +400,10 @@
             </div>
           </div>
 
-          <!-- IMAGE PLACEHOLDER: ../assets/service-2.jpg — Dental Implants -->
+          <!-- IMAGE PLACEHOLDER: ../assets/service-2.webp — Dental Implants -->
           <div class="reveal svc-card premium-card group flex h-full flex-col overflow-hidden">
             <div class="svc-media">
-              <img src="../assets/service-2.jpg" alt="Dental Implants" width="600" height="413" loading="lazy"
+              <img src="../assets/service-2.webp" alt="Dental Implants" width="1448" height="1086" loading="lazy"
                 decoding="async">
               <div class="absolute inset-0" style="background: linear-gradient(to top, rgba(15,23,42,0.4), transparent 60%);"></div>
             </div>
@@ -434,10 +421,10 @@
             </div>
           </div>
 
-          <!-- IMAGE PLACEHOLDER: ../assets/service-3.jpg — Crowns & Bridges -->
+          <!-- IMAGE PLACEHOLDER: ../assets/service-3.webp — Crowns & Bridges -->
           <div class="reveal svc-card premium-card group flex h-full flex-col overflow-hidden">
             <div class="svc-media">
-              <img src="../assets/service-3.jpg" alt="Crowns &amp; Bridges" width="600" height="413" loading="lazy"
+              <img src="../assets/service-3.webp" alt="Crowns &amp; Bridges" width="1448" height="1086" loading="lazy"
                 decoding="async">
               <div class="absolute inset-0" style="background: linear-gradient(to top, rgba(15,23,42,0.4), transparent 60%);"></div>
             </div>
@@ -455,10 +442,10 @@
             </div>
           </div>
 
-          <!-- IMAGE PLACEHOLDER: ../assets/service-4.jpg — Pediatric Dentistry -->
+          <!-- IMAGE PLACEHOLDER: ../assets/service-4.webp — Pediatric Dentistry -->
           <div class="reveal svc-card premium-card group flex h-full flex-col overflow-hidden">
             <div class="svc-media">
-              <img src="../assets/service-4.jpg" alt="Pediatric Dentistry" width="600" height="413" loading="lazy"
+              <img src="../assets/service-4.webp" alt="Pediatric Dentistry" width="1448" height="1086" loading="lazy"
                 decoding="async">
               <div class="absolute inset-0" style="background: linear-gradient(to top, rgba(15,23,42,0.4), transparent 60%);"></div>
             </div>
@@ -476,10 +463,10 @@
             </div>
           </div>
 
-          <!-- IMAGE PLACEHOLDER: ../assets/service-5.jpg — Emergency Dental Care -->
+          <!-- IMAGE PLACEHOLDER: ../assets/service-5.webp — Emergency Dental Care -->
           <div class="reveal svc-card premium-card group flex h-full flex-col overflow-hidden">
             <div class="svc-media">
-              <img src="../assets/service-5.jpg" alt="Emergency Dental Care" width="600" height="413" loading="lazy"
+              <img src="../assets/service-5.webp" alt="Emergency Dental Care" width="1448" height="1086" loading="lazy"
                 decoding="async">
               <div class="absolute inset-0" style="background: linear-gradient(to top, rgba(15,23,42,0.4), transparent 60%);"></div>
             </div>
@@ -497,10 +484,10 @@
             </div>
           </div>
 
-          <!-- IMAGE PLACEHOLDER: ../assets/service-6.jpg — Cosmetic Dentistry -->
+          <!-- IMAGE PLACEHOLDER: ../assets/service-6.webp — Cosmetic Dentistry -->
           <div class="reveal svc-card premium-card group flex h-full flex-col overflow-hidden">
             <div class="svc-media">
-              <img src="../assets/service-6.jpg" alt="Cosmetic Dentistry" width="600" height="413" loading="lazy"
+              <img src="../assets/service-6.webp" alt="Cosmetic Dentistry" width="1448" height="1086" loading="lazy"
                 decoding="async">
               <div class="absolute inset-0" style="background: linear-gradient(to top, rgba(15,23,42,0.4), transparent 60%);"></div>
             </div>
@@ -518,10 +505,10 @@
             </div>
           </div>
 
-          <!-- IMAGE PLACEHOLDER: ../assets/service-7.jpg — Teeth Cleaning & Whitening -->
+          <!-- IMAGE PLACEHOLDER: ../assets/service-7.webp — Teeth Cleaning & Whitening -->
           <div class="reveal svc-card premium-card group flex h-full flex-col overflow-hidden">
             <div class="svc-media">
-              <img src="../assets/service-7.jpg" alt="Teeth Cleaning &amp; Whitening" width="600" height="413"
+              <img src="../assets/service-7.webp" alt="Teeth Cleaning &amp; Whitening" width="1536" height="1024"
                 loading="lazy" decoding="async">
               <div class="absolute inset-0" style="background: linear-gradient(to top, rgba(15,23,42,0.4), transparent 60%);"></div>
             </div>
