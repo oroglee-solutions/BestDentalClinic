@@ -470,4 +470,215 @@
   document.querySelectorAll("[data-current-year]").forEach(function (el) {
     el.textContent = String(new Date().getFullYear());
   });
+
+  /* ------------------------------------------------------------
+     13. BOOKING MODAL
+     Injected here rather than into every page's markup, so all
+     pages share one copy. Opens 3s after load on every visit and
+     refresh, and can be reopened by any [data-open-booking]
+     element. Skipped on the booking page itself, where the same
+     form is already the main content.
+     ------------------------------------------------------------ */
+  (function () {
+    /* Match the booking page by URL — the home page also carries an
+       #appointmentForm, so the element alone is not a reliable test. */
+    var onBookingPage = /\/book-appointment(\/|\/index\.html)?$/.test(
+      window.location.pathname
+    );
+
+    var SERVICES = [
+      "Regular Check-up",
+      "Teeth Cleaning & Whitening",
+      "Invisible Aligners & Braces",
+      "Dental Implants",
+      "Crowns & Bridges",
+      "Pediatric Dentistry",
+      "Emergency Dental Care",
+      "Cosmetic Dentistry",
+      "Root Canal Treatment",
+      "Other",
+    ];
+
+    var SLOTS = [
+      "10:00 AM – 11:00 AM",
+      "11:00 AM – 12:00 PM",
+      "12:00 PM – 2:00 PM",
+      "4:00 PM – 5:00 PM",
+      "5:00 PM – 6:00 PM",
+      "6:00 PM – 8:00 PM",
+    ];
+
+    var options = function (list, placeholder) {
+      return (
+        '<option value="">' +
+        placeholder +
+        "</option>" +
+        list
+          .map(function (o) {
+            return "<option>" + o + "</option>";
+          })
+          .join("")
+      );
+    };
+
+    var LABEL =
+      "flex items-center gap-2 text-[11px] font-bold uppercase tracking-widest text-slate-400";
+    var FIELD =
+      "w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3.5 text-base text-ink outline-none transition-all placeholder:text-slate-400 focus:border-brand focus:ring-2 focus:ring-brand/20";
+    var SELECT = FIELD + " appearance-none cursor-pointer";
+
+    var overlay = document.createElement("div");
+    overlay.id = "bookingModal";
+    overlay.className =
+      "fixed inset-0 z-[120] items-center justify-center bg-ink/50 p-4 backdrop-blur-sm";
+    /* Display is driven inline rather than by .hidden/.flex, so the
+       modal still opens if output.css is stale or cached. */
+    overlay.style.display = "none";
+    overlay.setAttribute("role", "dialog");
+    overlay.setAttribute("aria-modal", "true");
+    overlay.setAttribute("aria-labelledby", "bookingModalTitle");
+
+    overlay.innerHTML =
+      '<div class="relative grid max-h-[92vh] w-full max-w-4xl overflow-y-auto rounded-3xl bg-white shadow-2xl sm:grid-cols-[0.8fr_1.2fr]" data-modal-card>' +
+      /* ---- Left panel ---- */
+      '<div class="relative hidden flex-col justify-between p-8 text-white sm:flex lg:p-10" style="background-image: linear-gradient(160deg, #1A4996 0%, #14387a 100%);">' +
+      '<div>' +
+      '<span class="mb-8 flex h-14 w-14 items-center justify-center rounded-2xl bg-white/15 text-2xl">' +
+      '<i class="fas fa-calendar-check" aria-hidden="true"></i></span>' +
+      '<h2 id="bookingModalTitle" class="font-display text-3xl font-bold leading-tight lg:text-4xl">Book Your<br><span class="italic">Visit</span></h2>' +
+      '<p class="mt-5 text-base leading-relaxed text-white/85">Join <span class="font-bold text-white">10k+</span> happy patients who trust our care.</p>' +
+      "</div>" +
+      '<ul class="mt-10 space-y-4 text-sm font-bold">' +
+      '<li class="flex items-center gap-3"><span class="flex h-8 w-8 items-center justify-center rounded-full bg-white/15"><i class="fas fa-circle-check" aria-hidden="true"></i></span> Modern Clinic</li>' +
+      '<li class="flex items-center gap-3"><span class="flex h-8 w-8 items-center justify-center rounded-full bg-white/15"><i class="fas fa-circle-check" aria-hidden="true"></i></span> Expert Doctors</li>' +
+      "</ul>" +
+      "</div>" +
+      /* ---- Right panel ---- */
+      '<div class="relative p-6 sm:p-8 lg:p-10">' +
+      '<button type="button" data-close-booking aria-label="Close booking form" ' +
+      'class="absolute right-5 top-5 flex h-10 w-10 items-center justify-center rounded-full bg-white text-lg text-ink shadow-md transition hover:bg-slate-100">' +
+      '<i class="fas fa-xmark" aria-hidden="true"></i></button>' +
+      '<span class="text-xs font-bold uppercase tracking-[0.2em] text-brand">Reservation</span>' +
+      '<h3 class="mt-2 font-display text-2xl font-bold text-ink sm:text-3xl">Request a Visit</h3>' +
+      '<form id="bookingModalForm" class="mt-6 space-y-5" novalidate>' +
+      '<div class="grid gap-5 sm:grid-cols-2">' +
+      '<div class="space-y-2">' +
+      '<label for="bmName" class="' + LABEL + '"><i class="fas fa-user text-[11px] text-brand" aria-hidden="true"></i> Full Name</label>' +
+      '<input id="bmName" name="name" type="text" required placeholder="Your Name" class="' + FIELD + '">' +
+      "</div>" +
+      '<div class="space-y-2">' +
+      '<label for="bmPhone" class="' + LABEL + '"><i class="fas fa-mobile-screen text-[11px] text-brand" aria-hidden="true"></i> Phone</label>' +
+      '<input id="bmPhone" name="phone" type="tel" required pattern="[0-9+\\s-]{10,15}" placeholder="10-digit Number" class="' + FIELD + '">' +
+      "</div>" +
+      '<div class="space-y-2">' +
+      '<label for="bmDate" class="' + LABEL + '"><i class="fas fa-calendar text-[11px] text-brand" aria-hidden="true"></i> Date</label>' +
+      '<input id="bmDate" name="date" type="date" required class="' + FIELD + '">' +
+      "</div>" +
+      '<div class="space-y-2">' +
+      '<label for="bmTime" class="' + LABEL + '"><i class="fas fa-clock text-[11px] text-brand" aria-hidden="true"></i> Time Slot</label>' +
+      '<div class="relative">' +
+      '<select id="bmTime" name="time" required class="' + SELECT + '">' + options(SLOTS, "Select Slot") + "</select>" +
+      '<i class="fas fa-chevron-down pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-xs text-slate-400" aria-hidden="true"></i>' +
+      "</div></div>" +
+      "</div>" +
+      '<div class="space-y-2">' +
+      '<label for="bmService" class="' + LABEL + '"><i class="fas fa-stethoscope text-[11px] text-brand" aria-hidden="true"></i> Treatment Type</label>' +
+      '<div class="relative">' +
+      '<select id="bmService" name="service" required class="' + SELECT + '">' + options(SERVICES, "Select treatment") + "</select>" +
+      '<i class="fas fa-chevron-down pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-xs text-slate-400" aria-hidden="true"></i>' +
+      "</div></div>" +
+      '<button type="submit" class="flex w-full items-center justify-center gap-3 rounded-xl bg-brand-deep py-4 text-base font-bold text-white shadow-lg transition duration-300 hover:bg-brand active:scale-[0.99]">' +
+      'Book on WhatsApp <i class="fas fa-arrow-right text-sm" aria-hidden="true"></i></button>' +
+      "</form>" +
+      '<div class="mt-6 flex items-center gap-4 border-t border-slate-100 pt-5">' +
+      '<span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-surface text-brand"><i class="fas fa-phone" aria-hidden="true"></i></span>' +
+      "<div>" +
+      '<p class="text-[11px] font-bold uppercase tracking-widest text-slate-400">Direct help</p>' +
+      '<p class="mt-1 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm font-bold text-ink">' +
+      '<a href="tel:+919030271023" class="transition hover:text-brand">+91 90302 71023</a>' +
+      '<span aria-hidden="true" class="text-slate-300">&bull;</span>' +
+      '<a href="tel:+917416860888" class="transition hover:text-brand">+91 74168 60888</a>' +
+      "</p></div></div>" +
+      "</div></div>";
+
+    document.body.appendChild(overlay);
+
+    var form = overlay.querySelector("#bookingModalForm");
+    var dateInput = overlay.querySelector("#bmDate");
+    var lastFocused = null;
+    var openTimer = null;
+
+    /* No dates in the past */
+    var today = new Date();
+    dateInput.min =
+      today.getFullYear() +
+      "-" +
+      String(today.getMonth() + 1).padStart(2, "0") +
+      "-" +
+      String(today.getDate()).padStart(2, "0");
+
+    var openModal = function () {
+      if (overlay.style.display === "flex") return;
+      lastFocused = document.activeElement;
+      overlay.style.display = "flex";
+      document.body.style.overflow = "hidden";
+      overlay.querySelector("#bmName").focus();
+    };
+
+    var closeModal = function () {
+      if (openTimer) window.clearTimeout(openTimer);
+      overlay.style.display = "none";
+      document.body.style.overflow = "";
+      if (lastFocused && lastFocused.focus) lastFocused.focus();
+    };
+
+    /* Close: X button, backdrop click, Escape */
+    overlay.addEventListener("click", function (e) {
+      if (e.target === overlay || e.target.closest("[data-close-booking]")) closeModal();
+    });
+
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape") closeModal();
+    });
+
+    /* Any element can reopen it */
+    document.querySelectorAll("[data-open-booking]").forEach(function (el) {
+      el.addEventListener("click", function (e) {
+        e.preventDefault();
+        openModal();
+      });
+    });
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      if (!form.reportValidity()) return;
+
+      var value = function (name) {
+        var field = form.elements[name];
+        return field && field.value ? field.value.trim() : "-";
+      };
+
+      var text = [
+        "*New Appointment Request — Best Dental Clinic*",
+        "",
+        "Name: " + value("name"),
+        "Phone: " + value("phone"),
+        "Service: " + value("service"),
+        "Preferred date: " + value("date"),
+        "Preferred time: " + value("time"),
+      ].join("\n");
+
+      window.open(
+        "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(text),
+        "_blank",
+        "noopener"
+      );
+
+      form.reset();
+      closeModal();
+    });
+
+    /* Auto-open 3s after every load / refresh */
+    if (!onBookingPage) openTimer = window.setTimeout(openModal, 3000);
+  })();
 })();
